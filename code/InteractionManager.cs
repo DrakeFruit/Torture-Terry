@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Linq;
 using Sandbox;
@@ -5,6 +6,7 @@ using Sandbox;
 public sealed class InteractionManager : Component
 {
     [Property] Vector3 gravity { get; set; }
+    [Property] float damping = 1f;
 
     GameObject heldObject = null;
     ModelPhysics terryPhys;
@@ -27,9 +29,11 @@ public sealed class InteractionManager : Component
             heldObject = tr.GameObject;
             terryPhys = tr.GameObject.Components.Get<ModelPhysics>();
             body = tr.Body;
-            body.PhysicsGroup.LinearDamping = 5f;
-
             grabOffset = cursorPosition - body.Transform.Position;
+
+            if(body.PhysicsGroup != null){
+                body.PhysicsGroup.LinearDamping = Math.Clamp( damping * (cursorPosition - body.Transform.Position).Length, 0, 2);
+            }
         }
         //move terry's limb to the cursor's position
 		if(body != null){
@@ -42,7 +46,9 @@ public sealed class InteractionManager : Component
             body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
         }
         if(Input.Released("attack1") && heldObject != null && body != null){
+            if(body.PhysicsGroup != null){
             body.PhysicsGroup.LinearDamping = 0f;
+            }
 
             body.MotionEnabled = true;
             heldObject = null;

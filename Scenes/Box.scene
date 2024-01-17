@@ -910,6 +910,7 @@
           "__version": 0,
           "__type": "InteractionManager",
           "__enabled": true,
+          "damping": 3,
           "gravity": "0,0,-300"
         },
         {
