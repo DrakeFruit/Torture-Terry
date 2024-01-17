@@ -4,36 +4,49 @@ using Sandbox;
 
 public sealed class InteractionManager : Component
 {
-    bool terrySelected = false;
-    GameObject terry = null;
-    ModelPhysics terryPhys;
-    PhysicsBody limb;
-    Vector3 cursorPosition;
+    [Property] Vector3 gravity { get; set; }
 
+    GameObject heldObject = null;
+    ModelPhysics terryPhys;
+    PhysicsBody body;
+    Vector3 cursorPosition;
+    Vector3 grabOffset;
+
+	protected override void OnEnabled()
+	{
+		Scene.PhysicsWorld.Gravity = gravity;
+	}
 	protected override void OnFixedUpdate()
     {
         //trace a ray at the mouse position
-        var tr = Scene.Trace.Ray((Scene.Camera.ScreenPixelToRay( Mouse.Position )), 1000f).WithoutTags("ignore").Run();
+        var tr = Scene.Trace.Ray((Scene.Camera.ScreenPixelToRay( Mouse.Position )), 1000f).Run();
         cursorPosition = tr.EndPosition.WithX(0);
 
         //get some references when mouse1 is held down
-        if(Input.Down("attack1") && tr.Hit && tr.GameObject.Tags.Has("terry") && terry == null){
-            terry = tr.GameObject;
+        if(Input.Down("attack1") && tr.Hit && tr.GameObject.Tags.Has("pickup") && heldObject == null && body == null){
+            heldObject = tr.GameObject;
             terryPhys = tr.GameObject.Components.Get<ModelPhysics>();
-            limb = tr.Body;
+            body = tr.Body;
+            body.PhysicsGroup.LinearDamping = 5f;
+
+            grabOffset = cursorPosition - body.Transform.Position;
         }
         //move terry's limb to the cursor's position
-		if(limb != null){
-            limb.MotionEnabled = false;
-            limb.Velocity = 0;
-            limb.AngularVelocity = 0;
+		if(body != null){
+            //limb.MotionEnabled = false;
+            body.Velocity = 0;
+            body.AngularVelocity = 0;
+            body.EnableCollisionSounds = true;
 
-            limb.SmoothMove( cursorPosition, .1f, Time.Delta );
+            Transform heldTransform = new Transform(cursorPosition, new Rotation(0, 0, 0, 0));
+            body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
         }
-        if(Input.Released("attack1") && terry != null && limb != null){
-            limb.MotionEnabled = true;
-            terry = null;
-            limb = null;
+        if(Input.Released("attack1") && heldObject != null && body != null){
+            body.PhysicsGroup.LinearDamping = 0f;
+
+            body.MotionEnabled = true;
+            heldObject = null;
+            body = null;
         }
 
         //play some impact sounds
