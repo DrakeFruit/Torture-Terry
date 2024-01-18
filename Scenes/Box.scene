@@ -58,7 +58,8 @@
             "Yaw": true
           },
           "Model": "models/citizen/citizen.vmdl",
-          "Renderer": "38831a5a-da83-469d-9194-a37ed3ed9ae6"
+          "Renderer": "38831a5a-da83-469d-9194-a37ed3ed9ae6",
+          "RigidbodyFlags": 0
         },
         {
           "__version": 0,
@@ -910,7 +911,7 @@
           "__version": 0,
           "__type": "InteractionManager",
           "__enabled": true,
-          "damping": 3,
+          "damping": 1,
           "gravity": "0,0,-300"
         },
         {
@@ -965,25 +966,6 @@
       "Children": []
     },
     {
-      "Id": "37690779-33ba-4077-8787-d3f23c78849d",
-      "Name": "Box Front",
-      "Position": "15.57642,0,91.93889",
-      "Scale": "1,16.72655,10.94235",
-      "Tags": "ignore",
-      "Components": [
-        {
-          "__version": 0,
-          "__type": "BoxCollider",
-          "__enabled": true,
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
       "Id": "893103e8-38a6-4e7e-8a12-b047056946d8",
       "Name": "Cube",
       "Position": "0,96,64",
@@ -1016,6 +998,82 @@
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
+        {
+          "__version": 0,
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "c8449bc7-35c6-4e2c-9c85-7ca0810cac56",
+      "Name": "right",
+      "Position": "-11.43895,447.168,56.02222",
+      "Scale": "2.2,6.999996,14.10002",
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "833a51b0-224b-4567-bdbe-18fdb3cd338a",
+      "Name": "bottom",
+      "Position": "-11.43895,0,-128",
+      "Scale": "2.2,17.70003,4.96",
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "a1db086f-d084-4feb-9540-73cdad696510",
+      "Name": "top",
+      "Position": "-11.43895,0,445.5173",
+      "Scale": "2.2,17.70003,5.759999",
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "51559461-ba96-4478-ad3c-fec50f4f38ab",
+      "Name": "left",
+      "Position": "-11.43895,-447.168,56.02222",
+      "Scale": "2.2,6.999996,14.10002",
+      "Enabled": true,
+      "Components": [
         {
           "__version": 0,
           "__type": "BoxCollider",

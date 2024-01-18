@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using Sandbox;
+using Sandbox.Utility.Svg;
 
 public sealed class InteractionManager : Component
 {
@@ -35,13 +36,12 @@ public sealed class InteractionManager : Component
                 body.PhysicsGroup.LinearDamping = Math.Clamp( damping * (cursorPosition - body.Transform.Position).Length, 0, 2);
             }
         }
-        //move terry's limb to the cursor's position
+        //move the object around
 		if(body != null){
-            //limb.MotionEnabled = false;
             body.Velocity = 0;
             body.AngularVelocity = 0;
-            body.EnableCollisionSounds = true;
 
+            //move the held object
             Transform heldTransform = new Transform(cursorPosition, new Rotation(0, 0, 0, 0));
             body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
         }
