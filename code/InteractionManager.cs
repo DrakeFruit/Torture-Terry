@@ -55,6 +55,6 @@ public sealed class InteractionManager : Component
             body = null;
         }
 
-        //play some impact sounds
+        //TODO: play some oof sounds
     }
 }
