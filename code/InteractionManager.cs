@@ -36,6 +36,7 @@ public sealed class InteractionManager : Component
                 body.PhysicsGroup.LinearDamping = Math.Clamp( damping * (cursorPosition - body.Transform.Position).Length, 0, 2);
             }
         }
+
         //move the object around
 		if(body != null){
             body.Velocity = 0;
@@ -46,6 +47,7 @@ public sealed class InteractionManager : Component
             body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
         }
         if(Input.Released("attack1") && heldObject != null && body != null){
+            TrashObjects(tr, heldObject);
             if(body.PhysicsGroup != null){
             body.PhysicsGroup.LinearDamping = 0f;
             }
@@ -56,5 +58,15 @@ public sealed class InteractionManager : Component
         }
 
         //TODO: play some oof sounds
+    }
+
+    static void TrashObjects(SceneTraceResult tr, GameObject heldObject){
+        if(tr.GameObject.Tags.Has("trash") && Input.Released("attack1")){
+            if(heldObject.Tags.Has("terry")){
+                heldObject.Clone();
+            }
+            heldObject.Destroy();
+        }
+            
     }
 }

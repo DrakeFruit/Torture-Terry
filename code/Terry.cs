@@ -10,15 +10,16 @@ public sealed class Terry : Component, Component.ICollisionListener
 
 	public void OnCollisionStart( Collision other )
 	{
-		if(other.Contact.NormalSpeed > 10 ){
 
-		}
-		Log.Info(other.Contact.NormalSpeed);
 	}
 
 	public void OnCollisionUpdate( Collision other )
 	{
-
+		Gizmo.Draw.Color = Color.White;
+		Gizmo.Draw.SolidSphere( other.Contact.Point, 4f );
+		Gizmo.Draw.Color = Gizmo.Colors.Red;
+		Gizmo.Draw.Line( other.Contact.Point, other.Contact.Point + other.Contact.NormalSpeed * 50f );
+		Log.Info(other.Contact.Point);
 	}
 
 	public void OnCollisionStop( CollisionStop other )
