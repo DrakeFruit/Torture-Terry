@@ -61,10 +61,8 @@ public sealed class InteractionManager : Component
     }
 
     static void TrashObjects(SceneTraceResult tr, GameObject heldObject){
-        if(tr.GameObject.Tags.Has("trash") && Input.Released("attack1")){
-            if(heldObject.Tags.Has("terry")){
-                heldObject.Clone();
-            }
+        if(tr.GameObject.Tags.Has("trash") && Input.Released("attack1"))
+        {
             heldObject.Destroy();
         }
             
