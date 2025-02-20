@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Explosion Urban",
+      "Type": "sound",
+      "Org": "drakefruit",
+      "Ident": "explosionurban",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsWhitelistDisabled": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/explosion_urban.sound"
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "RootObject": {
+    "__guid": "e4b30fb9-e2c5-4169-b455-baa0da51d30a",
+    "Flags": 0,
+    "Name": "sword",
+    "Tags": "pickup",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "cd3573cd-0614-4558-9d77-1e891cdc8739",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": true,
+          "Y": false,
+          "Z": false,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "926158f4-6e36-4508-a4e9-dc285792ddbd",
+        "Flags": 0,
+        "Name": "nordicsword",
+        "Rotation": "-0.4999999,0.5,-0.4999999,0.5",
+        "Scale": "3,3,3",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "e62a8c5c-0bb0-4891-958a-75c0434f5a96",
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/nordicsword/nordicsword.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "58144f63-ab8a-4bfc-999a-d93d3b9eeb07",
+            "Friction": null,
+            "IsTrigger": false,
+            "Model": "models/nordicsword/nordicsword.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          }
+        ]
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "baik.nordicsword#45849"
+  ],
+  "__version": 1
+}

@@ -1,26 +1,22 @@
 {
   "publish": {
-    "Allowed": true,
     "Enabled": false,
     "ProjectConfig": {
       "Title": "box",
       "Type": "map",
       "Org": "local",
       "Ident": "box",
-      "Tags": null,
       "Schema": 0,
-      "HasAssets": false,
-      "AssetsPath": null,
+      "IncludeSourceFiles": false,
       "Resources": null,
-      "MenuResources": "*",
-      "HasCode": false,
-      "CodePath": null,
       "PackageReferences": [],
       "EditorReferences": [
         "pilgrim.cardboard_hs#16021"
       ],
+      "IsWhitelistDisabled": false,
       "Metadata": {
-        "SingleAssetSource": "maps/box.vmap"
+        "SingleAssetSource": "maps/box.vmap",
+        "ParentPackage": "drakefruit.torture_terry"
       }
     }
   }

@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Explosion Urban",
+      "Type": "vsnd",
+      "Org": "local",
+      "Ident": "explosionurban",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsWhitelistDisabled": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/explosion_urban.wav"
+      }
+    }
+  }
+}

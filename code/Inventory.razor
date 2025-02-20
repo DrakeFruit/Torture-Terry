@@ -1,14 +1,29 @@
+@using System.Collections.Generic
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
 
 <root>
-	<button ref="Box" class="Box">Box</button>
-	<canvas width="50" height="50">
-		
-	</canvas>
+	<img class="menuIcon" texture="@MenuIcon.ResourcePath" alt="" onclick=@( () => MenuOpen = !MenuOpen )/>
+	<div class="@(MenuOpen ? "itemContainer" : "hide")">
+		@foreach ( var i in Items )
+		{
+			<image class="entry" texture="@i.ItemIcon.ResourcePath" alt="" onclick="@( () => i.Prefab.Clone(Vector3.Zero.WithZ(196)) )"/>
+		}
+	</div>
 </root>
 
 @code
 {
+	[Property] public Texture MenuIcon { get; set; }
+	[Property] public List<Item> Items { get; set; }
+	private bool MenuOpen { get; set; } = false;
+	protected override void OnFixedUpdate()
+	{
+		
+	}
+	protected override int BuildHash()
+	{
+		return MenuIcon.GetHashCode();
+	}
 }
