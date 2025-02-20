@@ -20,9 +20,9 @@ public sealed class InteractionManager : Component
 		Scene.PhysicsWorld.Gravity = gravity;
 	}
 	protected override void OnFixedUpdate()
-    {
+	{
         //trace a ray at the mouse position
-        var tr = Scene.Trace.Ray((Scene.Camera.ScreenPixelToRay( Mouse.Position )), 1000f).Run();
+        var tr = Scene.Trace.Ray( Scene.Camera.ScreenPixelToRay( Mouse.Position ), 1000 ).Run();
         cursorPosition = tr.EndPosition.WithX(0);
 
         //get some references when mouse1 is held down
@@ -38,21 +38,20 @@ public sealed class InteractionManager : Component
         }
 
         //move the object around
-		if(body != null){
-            body.Velocity = 0;
-            body.AngularVelocity = 0;
+        if ( body.IsValid() )
+        {
+	        body.Velocity = 0;
+	        body.AngularVelocity = 0;
 
-            //move the held object
-            Transform heldTransform = new Transform(cursorPosition, new Rotation(0, 0, 0, 0));
-            body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
+	        //move the held object
+	        Transform heldTransform = new Transform( cursorPosition, new Rotation( 0, 0, 0, 0 ) );
+	        body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
         }
-        if(Input.Released("attack1") && heldObject != null && body != null){
+        if(!Input.Down("attack1") && heldObject != null && body != null){
             TrashObjects(tr, heldObject);
-            if(body.PhysicsGroup != null){
-            body.PhysicsGroup.LinearDamping = 0f;
-            }
-
-            body.MotionEnabled = true;
+            if(body.PhysicsGroup != null) body.PhysicsGroup.LinearDamping = 0f;
+            
+            if( body.IsValid() ) body.MotionEnabled = true;
             heldObject = null;
             body = null;
         }
