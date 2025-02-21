@@ -21,6 +21,8 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "Power": 10000,
+        "Radius": 200,
         "Volume": 0.8
       },
       {
@@ -121,7 +123,34 @@
         ]
       }
     ],
-    "__variables": [],
+    "__variables": [
+      {
+        "Id": "Radius",
+        "Title": "Radius",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
+        "Targets": [
+          {
+            "Id": "e5fae977-20cd-4cb1-9235-0fac61542411",
+            "Property": "Radius"
+          }
+        ]
+      },
+      {
+        "Id": "Power",
+        "Title": "Power",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
+        "Targets": [
+          {
+            "Id": "e5fae977-20cd-4cb1-9235-0fac61542411",
+            "Property": "Power"
+          }
+        ]
+      }
+    ],
     "__properties": {
       "FixedUpdateFrequency": 50,
       "MaxFixedUpdates": 5,

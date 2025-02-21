@@ -8,6 +8,8 @@ public sealed class Bomb : Component
 	[Property] private GameObject ExplosionPrefab { get; set; }
 	[Property] SoundEvent ExplosionSound { get; set; }
 	[Property] float Volume { get; set; }
+	[Property] private float Radius { get; set; } = 150;
+	[Property] private float Power { get; set; } = 5000;
 	private TimeSince Timer { get; set; }
 	protected override void OnStart()
 	{
@@ -17,9 +19,9 @@ public sealed class Bomb : Component
 	{
 		if ( Timer.Relative >= FuseTime )
 		{
-			foreach ( var i in Scene.FindInPhysics( new Sphere( WorldPosition, 50000 ) ) )
+			foreach ( var i in Scene.FindInPhysics( new Sphere( WorldPosition, Radius ) ) )
 			{
-				var impulse = (i.WorldPosition - WorldPosition).Normal * 5000;
+				var impulse = (i.WorldPosition - WorldPosition).Normal * Power;
 				var rb = i.Components.Get<Rigidbody>();
 				var mp = i.Components.Get<ModelPhysics>();
 				if ( i == GameObject ) continue;

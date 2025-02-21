@@ -159,7 +159,6 @@
       "__guid": "72e0cc42-cff1-42be-b9fe-6db130649f2c",
       "Flags": 0,
       "Name": "Map",
-      "Position": "191.7816,12.84544,-46.6171",
       "Enabled": true,
       "Children": [
         {
@@ -219,7 +218,7 @@
           "__guid": "3a03966c-25ca-4190-a6d0-33d4e54c082f",
           "Flags": 0,
           "Name": "Music",
-          "Position": "-191.7816,-12.84544,206.6171",
+          "Position": "64,0.000003308058,160",
           "Enabled": true,
           "Components": [
             {
@@ -276,7 +275,7 @@
           "__guid": "20483308-b119-41fb-a8c8-e9efe99c86f5",
           "Flags": 0,
           "Name": "Listener",
-          "Position": "64.21843,-12.84544,190.6171",
+          "Position": "0,0,160",
           "Enabled": true,
           "Components": [
             {
@@ -296,7 +295,7 @@
           "__guid": "6148aca6-d573-4f08-95b8-77fa4d6dfab6",
           "Flags": 0,
           "Name": "trash",
-          "Position": "-127.7816,227.1546,238.6171",
+          "Position": "64,239.565,204.2553",
           "Rotation": "0,0,-0.7933533,0.6087615",
           "Tags": "trash",
           "Enabled": true,
