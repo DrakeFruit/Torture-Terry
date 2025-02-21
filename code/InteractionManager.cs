@@ -1,69 +1,48 @@
 using System;
-using System.Diagnostics;
-using System.Linq;
 using Sandbox;
-using Sandbox.Utility.Svg;
+using Sandbox.Physics;
 
 public sealed class InteractionManager : Component
 {
-    [Property] Vector3 gravity { get; set; }
-    [Property] float damping = 1f;
+    [Property] Vector3 Gravity { get; set; }
+    [Property] float Damping = 1f;
 
-    GameObject heldObject = null;
-    ModelPhysics terryPhys;
-    PhysicsBody body;
-    Vector3 cursorPosition;
-    Vector3 grabOffset;
+    GameObject HeldObject;
+    PhysicsBody Body;
+    PhysicsBody CursorBody;
+    Sandbox.Physics.SpringJoint Spring;
+    Vector3 GrabOffset;
 
 	protected override void OnEnabled()
 	{
-		Scene.PhysicsWorld.Gravity = gravity;
+		Scene.PhysicsWorld.Gravity = Gravity;
+		CursorBody = new( Scene.PhysicsWorld );
 	}
 	protected override void OnFixedUpdate()
 	{
         //trace a ray at the mouse position
         var tr = Scene.Trace.Ray( Scene.Camera.ScreenPixelToRay( Mouse.Position ), 1000 ).Run();
-        cursorPosition = tr.EndPosition.WithX(0);
+        CursorBody.Position = tr.EndPosition.WithX(0);
 
-        //get some references when mouse1 is held down
-        if(Input.Down("attack1") && tr.Hit && tr.GameObject.Tags.Has("pickup") && heldObject == null && body == null){
-            heldObject = tr.GameObject;
-            terryPhys = tr.GameObject.Components.Get<ModelPhysics>();
-            body = tr.Body;
-            grabOffset = cursorPosition - body.Transform.Position;
-
-            if(body.PhysicsGroup != null){
-                body.PhysicsGroup.LinearDamping = Math.Clamp( damping * (cursorPosition - body.Transform.Position).Length, 0, 2);
-            }
+        //Pickup
+        if(Input.Down("attack1") && tr.Hit && tr.GameObject.Tags.Has("pickup") && HeldObject == null && Body == null){
+            HeldObject = tr.GameObject;
+            Spring = PhysicsJoint.CreateSpring( CursorBody, tr.Body, 0, 1 );
+            Spring.SpringLinear = Spring.SpringLinear with { Damping = Damping };
         }
 
-        //move the object around
-        if ( body.IsValid() )
-        {
-	        body.Velocity = 0;
-	        body.AngularVelocity = 0;
+        //Drop / Trashing
+        if( !Input.Down( "attack1" ) ){
+	        if( Spring.IsValid() ) Spring.Remove();
+	        if(tr.GameObject.Tags.Has("trash") && Input.Released("attack1"))
+	        {
+		        Spring.Body2.GetGameObject().Destroy();
+	        }
 
-	        //move the held object
-	        Transform heldTransform = new Transform( cursorPosition, new Rotation( 0, 0, 0, 0 ) );
-	        body.SmoothMove( heldTransform.Position - grabOffset, .1f, Time.Delta );
-        }
-        if(!Input.Down("attack1") && heldObject != null && body != null){
-            TrashObjects(tr, heldObject);
-            if(body.PhysicsGroup != null) body.PhysicsGroup.LinearDamping = 0f;
-            
-            if( body.IsValid() ) body.MotionEnabled = true;
-            heldObject = null;
-            body = null;
+	        HeldObject = null;
+	        Body = null;
         }
 
         //TODO: play some oof sounds
-    }
-
-    static void TrashObjects(SceneTraceResult tr, GameObject heldObject){
-        if(tr.GameObject.Tags.Has("trash") && Input.Released("attack1"))
-        {
-            heldObject.Destroy();
-        }
-            
     }
 }
