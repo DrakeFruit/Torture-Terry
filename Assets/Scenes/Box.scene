@@ -78,7 +78,6 @@
         {
           "__type": "InteractionManager",
           "__guid": "10867e00-31c7-453d-a1c3-dab1ed59408a",
-          "Damping": 1,
           "Gravity": "0,0,-300",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
