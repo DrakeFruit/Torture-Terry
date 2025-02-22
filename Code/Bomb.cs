@@ -1,6 +1,7 @@
 using System.Linq;
 using Sandbox;
 using Sandbox.Audio;
+using Sandbox.Services;
 
 public sealed class Bomb : Component
 {
@@ -14,6 +15,7 @@ public sealed class Bomb : Component
 	protected override void OnStart()
 	{
 		Timer = 0;
+		Stats.Increment( "bombs", 1 );
 	}
 	protected override void OnFixedUpdate()
 	{

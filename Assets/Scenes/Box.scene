@@ -72,7 +72,6 @@
       "__guid": "b2a02484-0163-42f4-b676-4ae5a1668569",
       "Flags": 0,
       "Name": "Interaction Manager",
-      "Position": "531.569,70.75409,302.3848",
       "Enabled": true,
       "Components": [
         {
@@ -117,7 +116,6 @@
       "__guid": "60f053db-3f4b-4663-968e-e222c354140c",
       "Flags": 0,
       "Name": "UI",
-      "Position": "921.4056,97.6413,328.3017",
       "Enabled": true,
       "Components": [
         {
@@ -465,6 +463,69 @@
               "Static": true,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
+            }
+          ]
+        },
+        {
+          "__guid": "dc41330c-def7-48c2-bcc4-63b4ec6f2505",
+          "Flags": 0,
+          "Name": "Text",
+          "Position": "32.4406,240.2396,183.3188",
+          "Rotation": "0,0,-1,0.0000001947072",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.TextRenderer",
+              "__guid": "7848c7c7-d744-4141-8d23-4cdf904bf439",
+              "__version": 1,
+              "BlendMode": "Normal",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "Scale": 0.14,
+              "TextAlignment": "Center",
+              "TextScope": {
+                "Text": "Drag here to trash",
+                "TextColor": "1,1,1,1",
+                "FontName": "Poppins",
+                "FontSize": 64,
+                "FontWeight": 800,
+                "FontItalic": false,
+                "LineHeight": 1,
+                "LetterSpacing": 0,
+                "WordSpacing": 0,
+                "Outline": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,1,1"
+                },
+                "Shadow": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                },
+                "OutlineUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,1,0,1"
+                },
+                "ShadowUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                }
+              }
             }
           ]
         }
