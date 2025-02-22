@@ -12,6 +12,7 @@ public sealed class Bomb : Component
 	[Property] private float Radius { get; set; } = 150;
 	[Property] private float Power { get; set; } = 5000;
 	private TimeSince Timer { get; set; }
+	
 	protected override void OnStart()
 	{
 		Timer = 0;

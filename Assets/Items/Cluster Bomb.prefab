@@ -1,14 +1,13 @@
 {
   "RootObject": {
-    "__guid": "3b1d06a9-7fba-42a4-865e-f48e796ae853",
+    "__guid": "076cb250-7fd2-41fc-b9b7-bfbbf1476c7e",
     "Flags": 0,
-    "Name": "bomb",
-    "Tags": "pickup",
+    "Name": "cluster bomb",
     "Enabled": true,
     "Components": [
       {
         "__type": "Bomb",
-        "__guid": "e5fae977-20cd-4cb1-9235-0fac61542411",
+        "__guid": "18c9cc09-20bd-4521-9d48-b3e259786c85",
         "ExplosionPrefab": {
           "_type": "gameobject",
           "prefab": "particles/explosion/explosion.medium.prefab"
@@ -27,7 +26,7 @@
       },
       {
         "__type": "Sandbox.Rigidbody",
-        "__guid": "93929ca3-946f-478a-8706-3cfcdada9d28",
+        "__guid": "9f3ca884-c22c-4957-a75d-666cbc29d2e4",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -51,41 +50,118 @@
         "OverrideMassCenter": false,
         "RigidbodyFlags": 0,
         "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.ActionGraphs.ActionsInvoker",
+        "__guid": "884fd592-7212-45a8-bc12-40479ca58f12",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnDestroyAction": {
+          "__version": 9,
+          "__guid": "3e0fec97-ae37-4681-a81f-a583f3210956",
+          "__changeId": 11,
+          "UserData": {
+            "Title": "On Destroy Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "0,36"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "300,72"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "0,144"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 4,
+              "DstName": "_target"
+            }
+          ],
+          "Defaults": {
+            "$2.gameobject": {
+              "_type": "gameobject",
+              "prefab": "items/cluster bombs.prefab"
+            }
+          }
+        },
+        "OnDisabledAction": null,
+        "OnEnabledAction": null,
+        "OnFixedUpdateAction": null,
+        "OnUpdateAction": null
       }
     ],
     "Children": [
       {
-        "__guid": "54f0ad1a-bfa6-4257-ba89-e7390ef1632d",
+        "__guid": "013d6af2-49d8-4a02-a7d7-5a6bb17d8998",
         "Flags": 0,
-        "Name": "bomb",
+        "Name": "untitled_15",
+        "Rotation": "0.6123724,-0.6123723,-0.3535533,0.3535534",
+        "Scale": "2,2,2",
         "Enabled": true,
         "Components": [
           {
-            "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "9ff193b3-0e4e-4d84-a0b7-7f283d509443",
-            "AnimationGraph": null,
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "3f53a5b0-3e2a-47d1-ac22-ff5fa42309d6",
             "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": null,
             "CreateAttachments": false,
-            "CreateBoneObjects": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
-            "Model": "models/bomb/bomb.vmdl",
-            "Morphs": {},
+            "Model": "assets/untitled_15.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
-            "Parameters": {
-              "bools": {},
-              "ints": {},
-              "floats": {},
-              "vectors": {},
-              "rotations": {}
-            },
-            "PlaybackRate": 1,
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": false,
@@ -93,18 +169,14 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Sequence": {
-              "Name": null
-            },
-            "Tint": "1,1,1,1",
-            "UseAnimGraph": true
+            "Tint": "1,1,1,1"
           },
           {
-            "__type": "Sandbox.SphereCollider",
-            "__guid": "6625dafa-b1ae-42e1-9f6f-120c01695d68",
-            "Center": "0,0,12.90001",
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "3784cc8b-61fd-4a36-a46e-0d8a00402a34",
             "Friction": null,
             "IsTrigger": false,
+            "Model": "assets/untitled_15.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -115,7 +187,6 @@
             "OnObjectTriggerExit": null,
             "OnTriggerEnter": null,
             "OnTriggerExit": null,
-            "Radius": 13.299947,
             "Static": false,
             "Surface": null,
             "SurfaceVelocity": "0,0,0"
@@ -123,34 +194,7 @@
         ]
       }
     ],
-    "__variables": [
-      {
-        "Id": "Radius",
-        "Title": "Radius",
-        "Description": null,
-        "Group": null,
-        "Order": 0,
-        "Targets": [
-          {
-            "Id": "e5fae977-20cd-4cb1-9235-0fac61542411",
-            "Property": "Radius"
-          }
-        ]
-      },
-      {
-        "Id": "Power",
-        "Title": "Power",
-        "Description": null,
-        "Group": null,
-        "Order": 0,
-        "Targets": [
-          {
-            "Id": "e5fae977-20cd-4cb1-9235-0fac61542411",
-            "Property": "Power"
-          }
-        ]
-      }
-    ],
+    "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,
       "MaxFixedUpdates": 5,
@@ -181,8 +225,8 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "baik.bomb#19525",
-    "facepunch.explosionmedium#78691"
+    "facepunch.explosionmedium#78691",
+    "polyrats.untitled_15#14146"
   ],
   "__version": 1
 }

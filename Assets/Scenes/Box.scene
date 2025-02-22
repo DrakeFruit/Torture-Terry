@@ -78,6 +78,12 @@
           "__type": "InteractionManager",
           "__guid": "10867e00-31c7-453d-a1c3-dab1ed59408a",
           "Gravity": "0,0,-300",
+          "Inventory": {
+            "_type": "component",
+            "component_id": "42ad537d-12a8-48aa-961f-ccb43c1fe7c7",
+            "go": "60f053db-3f4b-4663-968e-e222c354140c",
+            "component_type": "Inventory"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -140,7 +146,8 @@
             "items/bomb.item",
             "items/hammer.item",
             "items/sword.item",
-            "items/terry.item"
+            "items/terry.item",
+            "items/cluster bomb.item"
           ],
           "MenuIcon": "textures/generated/text/62e519703d0e5ccd.vtex",
           "OnComponentDestroy": null,
@@ -526,6 +533,41 @@
                   "Offset": "4,4"
                 }
               }
+            }
+          ]
+        },
+        {
+          "__guid": "028faab3-6048-4121-8d39-7cf8c891776d",
+          "Flags": 0,
+          "Name": "Envmap Probe",
+          "Position": "0,-0.00008853525,160",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.EnvmapProbe",
+              "__guid": "37626ede-b4db-4552-9805-69e449fb9395",
+              "Bounds": {
+                "Mins": "-324.1317,-779.002,-650.4211",
+                "Maxs": "664.8368,743.3853,512.0526"
+              },
+              "DelayBetweenUpdates": 0.1,
+              "Feathering": 0.02,
+              "FrameInterval": 5,
+              "MaxDistance": 512,
+              "MultiBounce": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Projection": "Box",
+              "RenderDynamically": true,
+              "Texture": "textures/cubemaps/default2.vtex",
+              "TintColor": "1,1,1,1",
+              "UpdateStrategy": "OnEnabled",
+              "ZFar": 4096,
+              "ZNear": 16
             }
           ]
         }

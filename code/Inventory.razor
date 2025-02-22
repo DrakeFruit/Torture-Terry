@@ -8,7 +8,7 @@
 	<div class="@(MenuOpen ? "itemContainer" : "hide")">
 		@foreach ( var i in Items )
 		{
-			<image class="entry" texture="@i.ItemIcon.ResourcePath" alt="" onclick="@( () => i.Prefab.Clone(Vector3.Zero.WithZ(196)) )"/>
+			<image class="entry" texture="@i.ItemIcon.ResourcePath" alt="" onclick="@( () => SpawnItem( i ) )"/>
 		}
 	</div>
 </root>
@@ -20,6 +20,11 @@
 	private bool MenuOpen { get; set; } = false;
 	protected override void OnFixedUpdate()
 	{
+		
+	}
+	private void SpawnItem( Item i )
+	{
+		var go = i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
 		
 	}
 	protected override int BuildHash()

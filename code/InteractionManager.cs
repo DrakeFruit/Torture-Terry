@@ -1,12 +1,15 @@
 using System;
+using System.Linq;
 using Sandbox;
 using Sandbox.Physics;
 
 public sealed class InteractionManager : Component
 {
+	[Property] Inventory Inventory { get; set; }
     [Property] Vector3 Gravity { get; set; }
     private PhysicsBody HeldBody;
     private GameObject HeldObject;
+    private ModelPhysics HeldRagdoll;
     private PhysicsBody CursorBody;
     private Sandbox.Physics.FixedJoint GrabJoint;
     private float HeldAngularDamping;
@@ -23,11 +26,10 @@ public sealed class InteractionManager : Component
 	protected override void OnFixedUpdate()
 	{
 		var tr = Scene.Trace.Ray( Scene.Camera.ScreenPixelToRay( Mouse.Position ), 1000 ).Run();
+		CursorBody.Position = tr.EndPosition.WithX( 0 );
 
 		if ( Input.Down( "attack1" ) && !HeldBody.IsValid() ) Pickup( tr );
 		if ( !Input.Down( "attack1" ) && HeldBody.IsValid() ) Drop( tr );
-
-		CursorBody.Position = tr.EndPosition.WithX( 0 );
 	}
 
 	public void Pickup(SceneTraceResult tr)
@@ -36,6 +38,7 @@ public sealed class InteractionManager : Component
 
 		HeldBody = tr.Body;
 		HeldObject = tr.GameObject;
+		HeldRagdoll = HeldObject.Components.GetInChildrenOrSelf<ModelPhysics>();
 
 		var localOffset = HeldBody.Transform.PointToLocal( tr.HitPosition );
 		
@@ -45,10 +48,9 @@ public sealed class InteractionManager : Component
 		GrabJoint.Point2 = new PhysicsPoint( HeldBody, localOffset );
 
 		float maxForce;
-		var phys = HeldObject.Components.GetInChildrenOrSelf<ModelPhysics>();
-		if ( phys.IsValid() )
+		if ( HeldRagdoll.IsValid() )
 		{
-			maxForce = 100.0f * phys.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
+			maxForce = 100.0f * HeldRagdoll.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
 		} else maxForce = 100.0f * tr.Body.Mass * Scene.PhysicsWorld.Gravity.Length;
 		
 		GrabJoint.SpringLinear = new PhysicsSpring( 15, 1, maxForce );
