@@ -140,13 +140,13 @@
           "ZIndex": 100
         },
         {
-          "__type": "Inventory",
+          "__type": "TortureTerry.Inventory",
           "__guid": "42ad537d-12a8-48aa-961f-ccb43c1fe7c7",
           "Items": [
-            "items/bomb.item",
-            "items/hammer.item",
-            "items/sword.item",
             "items/terry.item",
+            "items/sword.item",
+            "items/hammer.item",
+            "items/bomb.item",
             "items/cluster bomb.item"
           ],
           "MenuIcon": "textures/generated/text/62e519703d0e5ccd.vtex",

@@ -1,6 +1,7 @@
 @using System
 @using System.Collections.Generic
 @using System.Linq
+@using Sandbox
 @using Sandbox.Services
 @namespace TortureTerry
 @inherits Sandbox.PanelComponent
@@ -25,8 +26,7 @@
 	{
 		Terries.Clear();
 		Terries.Add( Scene.Components.Get<Terry>() );
-		Scoreboard = Leaderboards.Get( "score" );
-		Score = (int)Scoreboard.Entries.FirstOrDefault( x => x.Me ).Value;
+		Score = 0;
 	}
 
 	protected override int BuildHash()

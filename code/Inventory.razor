@@ -1,5 +1,6 @@
 @using System.Collections.Generic
 @using Sandbox
+@using Sandbox.Services
 @using Sandbox.UI
 @namespace TortureTerry
 @inherits PanelComponent
@@ -9,7 +10,13 @@
 	<div class="@(MenuOpen ? "itemContainer" : "hide")">
 		@foreach ( var i in Items )
 		{
-			<image class="entry" texture="@i.ItemIcon.ResourcePath" alt="" onclick="@( () => SpawnItem( i ) )"/>
+			<div class="entry">
+				<image texture="@i.ItemIcon.ResourcePath" alt="" onclick="@( () => SpawnItem( i ) )"/>
+				@* @if ( i.Locked && Stats.LocalPlayer.Get( i.Name ).Value == 0 ) *@
+				@* { *@
+				@* 	<div class="lock">🔒</div> *@
+				@* } *@
+			</div>
 		}
 	</div>
 </root>
@@ -23,12 +30,14 @@
 	{
 		
 	}
+	
 	private void SpawnItem( Item i )
 	{
 		i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
 	}
+	
 	protected override int BuildHash()
 	{
-		return MenuIcon.GetHashCode();
+		return Leaderboard.Score;
 	}
 }

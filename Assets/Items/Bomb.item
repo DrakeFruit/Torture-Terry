@@ -49,6 +49,9 @@
     "_type": "gameobject",
     "prefab": "items/bomb.prefab"
   },
+  "Locked": true,
+  "Name": "bomb",
+  "Price": 1000,
   "__references": [],
   "__version": 0
 }
