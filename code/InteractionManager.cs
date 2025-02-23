@@ -3,6 +3,7 @@ using System.Linq;
 using Sandbox;
 using Sandbox.Physics;
 
+namespace TortureTerry;
 public sealed class InteractionManager : Component
 {
 	[Property] Inventory Inventory { get; set; }

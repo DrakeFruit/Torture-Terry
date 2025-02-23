@@ -63,7 +63,7 @@
       "__guid": "38831a5a-da83-469d-9194-a37ed3ed9ae6",
       "Flags": 0,
       "Name": "Terry",
-      "Tags": "terry,pickup",
+      "Tags": "pickup,terry",
       "Enabled": true,
       "__Prefab": "items/terry.prefab",
       "__PrefabVariables": {}
@@ -75,7 +75,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "InteractionManager",
+          "__type": "TortureTerry.InteractionManager",
           "__guid": "10867e00-31c7-453d-a1c3-dab1ed59408a",
           "Gravity": "0,0,-300",
           "Inventory": {
@@ -150,6 +150,16 @@
             "items/cluster bomb.item"
           ],
           "MenuIcon": "textures/generated/text/62e519703d0e5ccd.vtex",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "TortureTerry.Leaderboard",
+          "__guid": "67f8af7b-2b32-4222-b3d0-3b6f9b532a1c",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -299,8 +309,8 @@
           "__guid": "6148aca6-d573-4f08-95b8-77fa4d6dfab6",
           "Flags": 0,
           "Name": "trash",
-          "Position": "64,239.565,204.2553",
-          "Rotation": "0,0,-0.7933533,0.6087615",
+          "Position": "79.77988,-239.5508,1.005401",
+          "Rotation": "0,0,-0.5,0.8660254",
           "Tags": "trash",
           "Enabled": true,
           "Components": [
@@ -477,7 +487,7 @@
           "__guid": "dc41330c-def7-48c2-bcc4-63b4ec6f2505",
           "Flags": 0,
           "Name": "Text",
-          "Position": "32.4406,240.2396,183.3188",
+          "Position": "48.2203,-239.972,97.283",
           "Rotation": "0,0,-1,0.0000001947072",
           "Enabled": true,
           "Components": [

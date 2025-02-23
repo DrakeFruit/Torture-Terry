@@ -1,11 +1,11 @@
-using System.Linq;
+using System.Threading.Tasks;
 using Sandbox;
 using Sandbox.Audio;
 using Sandbox.Services;
 
 public sealed class Bomb : Component
 {
-	[Property] private float FuseTime { get; set; }
+	[Property] private RangedFloat FuseTime { get; set; }
 	[Property] private GameObject ExplosionPrefab { get; set; }
 	[Property] SoundEvent ExplosionSound { get; set; }
 	[Property] float Volume { get; set; }
@@ -20,7 +20,7 @@ public sealed class Bomb : Component
 	}
 	protected override void OnFixedUpdate()
 	{
-		if ( Timer.Relative >= FuseTime )
+		if ( Timer.Relative >= FuseTime.GetValue() )
 		{
 			foreach ( var i in Scene.FindInPhysics( new Sphere( WorldPosition, Radius ) ) )
 			{
@@ -42,8 +42,14 @@ public sealed class Bomb : Component
 			ExplosionSound.Volume = Volume;
 			var sound = Sound.Play( ExplosionSound, WorldPosition );
 			sound.TargetMixer = Mixer.FindMixerByName( "Game" );
-			ExplosionPrefab.Clone( WorldPosition );
+			Destroy( ExplosionPrefab.Clone( WorldPosition ) );
 			GameObject.Destroy();
 		}
+	}
+
+	static async void Destroy( GameObject obj )
+	{
+		await GameTask.DelayRealtimeSeconds( 5 );
+		obj.Destroy();
 	}
 }

@@ -34,7 +34,7 @@
               "prefab": "particles/explosion/explosion.medium.prefab"
             },
             "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
+            "FuseTime": "0.5 1.2",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -126,6 +126,25 @@
         "Enabled": true,
         "Components": [
           {
+            "__type": "Bomb",
+            "__guid": "73b9e9ef-f492-4aa2-a01f-56bba31a267c",
+            "ExplosionPrefab": {
+              "_type": "gameobject",
+              "prefab": "particles/explosion/explosion.medium.prefab"
+            },
+            "ExplosionSound": "sounds/explosion_urban.sound",
+            "FuseTime": "0.8 1.2",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Power": 5000,
+            "Radius": 150,
+            "Volume": 0.2
+          },
+          {
             "__type": "Sandbox.ModelRenderer",
             "__guid": "e40b5814-3181-4467-bcc9-178607b62425",
             "BodyGroups": 18446744073709551615,
@@ -194,25 +213,6 @@
             "OverrideMassCenter": false,
             "RigidbodyFlags": 0,
             "StartAsleep": false
-          },
-          {
-            "__type": "Bomb",
-            "__guid": "73b9e9ef-f492-4aa2-a01f-56bba31a267c",
-            "ExplosionPrefab": {
-              "_type": "gameobject",
-              "prefab": "particles/explosion/explosion.medium.prefab"
-            },
-            "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Power": 5000,
-            "Radius": 150,
-            "Volume": 0.2
           }
         ]
       },
@@ -224,6 +224,25 @@
         "Scale": "5,5,5",
         "Enabled": true,
         "Components": [
+          {
+            "__type": "Bomb",
+            "__guid": "559d744e-384a-4b0b-9758-7ad88c31e598",
+            "ExplosionPrefab": {
+              "_type": "gameobject",
+              "prefab": "particles/explosion/explosion.medium.prefab"
+            },
+            "ExplosionSound": "sounds/explosion_urban.sound",
+            "FuseTime": "0.8 1.2",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Power": 5000,
+            "Radius": 150,
+            "Volume": 0.2
+          },
           {
             "__type": "Sandbox.ModelRenderer",
             "__guid": "36131a6a-11a0-4ee3-830a-b0ed321887a6",
@@ -293,421 +312,6 @@
             "OverrideMassCenter": false,
             "RigidbodyFlags": 0,
             "StartAsleep": false
-          },
-          {
-            "__type": "Bomb",
-            "__guid": "559d744e-384a-4b0b-9758-7ad88c31e598",
-            "ExplosionPrefab": {
-              "_type": "gameobject",
-              "prefab": "particles/explosion/explosion.medium.prefab"
-            },
-            "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Power": 5000,
-            "Radius": 150,
-            "Volume": 0.2
-          }
-        ]
-      },
-      {
-        "__guid": "b4313611-c8b3-4111-b4f4-79e014f27ca4",
-        "Flags": 0,
-        "Name": "pipe_bomb (3)",
-        "Position": "0,0,2.060814",
-        "Scale": "5,5,5",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "a9b78321-a30a-47f8-90f8-72627650cb31",
-            "BodyGroups": 18446744073709551615,
-            "CreateAttachments": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "Sandbox.ModelCollider",
-            "__guid": "9a997efe-1049-493f-ae12-e2c9c57cb342",
-            "Friction": null,
-            "IsTrigger": false,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "Sandbox.Rigidbody",
-            "__guid": "228d8951-606c-4520-b4ce-8bbf2c204f3f",
-            "AngularDamping": 0,
-            "Gravity": true,
-            "LinearDamping": 0,
-            "Locking": {
-              "X": true,
-              "Y": false,
-              "Z": false,
-              "Pitch": true,
-              "Yaw": true,
-              "Roll": false
-            },
-            "MassCenterOverride": "0,0,0",
-            "MassOverride": 0,
-            "MotionEnabled": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OverrideMassCenter": false,
-            "RigidbodyFlags": 0,
-            "StartAsleep": false
-          },
-          {
-            "__type": "Bomb",
-            "__guid": "71a57fbc-3c2e-4308-9eea-83f5fb9f562d",
-            "ExplosionPrefab": {
-              "_type": "gameobject",
-              "prefab": "particles/explosion/explosion.medium.prefab"
-            },
-            "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Power": 5000,
-            "Radius": 150,
-            "Volume": 0.2
-          }
-        ]
-      },
-      {
-        "__guid": "3a2772ab-93ef-49f5-9ffd-357518df4793",
-        "Flags": 0,
-        "Name": "pipe_bomb (4)",
-        "Position": "0,0,2.060814",
-        "Scale": "5,5,5",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "c72e3387-f851-4a4b-935f-ba4ba19fac9e",
-            "BodyGroups": 18446744073709551615,
-            "CreateAttachments": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "Sandbox.ModelCollider",
-            "__guid": "799cb76d-2fdf-402e-b1d3-30187e4f9125",
-            "Friction": null,
-            "IsTrigger": false,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "Sandbox.Rigidbody",
-            "__guid": "941ef46e-6414-4f21-bcd7-0b83cddb84f6",
-            "AngularDamping": 0,
-            "Gravity": true,
-            "LinearDamping": 0,
-            "Locking": {
-              "X": true,
-              "Y": false,
-              "Z": false,
-              "Pitch": true,
-              "Yaw": true,
-              "Roll": false
-            },
-            "MassCenterOverride": "0,0,0",
-            "MassOverride": 0,
-            "MotionEnabled": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OverrideMassCenter": false,
-            "RigidbodyFlags": 0,
-            "StartAsleep": false
-          },
-          {
-            "__type": "Bomb",
-            "__guid": "a48398dd-5fde-400c-922b-17e42e9c268a",
-            "ExplosionPrefab": {
-              "_type": "gameobject",
-              "prefab": "particles/explosion/explosion.medium.prefab"
-            },
-            "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Power": 5000,
-            "Radius": 150,
-            "Volume": 0.2
-          }
-        ]
-      },
-      {
-        "__guid": "11b8ab40-bb40-4149-8f43-11eb6e8f616c",
-        "Flags": 0,
-        "Name": "pipe_bomb (5)",
-        "Position": "0,0,2.060814",
-        "Scale": "5,5,5",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "72450b56-08f6-46ae-b477-e6d47bb44c22",
-            "BodyGroups": 18446744073709551615,
-            "CreateAttachments": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "Sandbox.ModelCollider",
-            "__guid": "69377291-aa56-4a0a-bb25-730d83524b34",
-            "Friction": null,
-            "IsTrigger": false,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "Sandbox.Rigidbody",
-            "__guid": "70a04b11-a3e3-4bcb-aa4b-fb451a3f3724",
-            "AngularDamping": 0,
-            "Gravity": true,
-            "LinearDamping": 0,
-            "Locking": {
-              "X": true,
-              "Y": false,
-              "Z": false,
-              "Pitch": true,
-              "Yaw": true,
-              "Roll": false
-            },
-            "MassCenterOverride": "0,0,0",
-            "MassOverride": 0,
-            "MotionEnabled": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OverrideMassCenter": false,
-            "RigidbodyFlags": 0,
-            "StartAsleep": false
-          },
-          {
-            "__type": "Bomb",
-            "__guid": "ce11b66a-2721-4e8f-8fbe-83dc371ba1b6",
-            "ExplosionPrefab": {
-              "_type": "gameobject",
-              "prefab": "particles/explosion/explosion.medium.prefab"
-            },
-            "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Power": 5000,
-            "Radius": 150,
-            "Volume": 0.2
-          }
-        ]
-      },
-      {
-        "__guid": "eb8d4ac2-2df4-47f7-b15d-6eb67269b37a",
-        "Flags": 0,
-        "Name": "pipe_bomb (6)",
-        "Position": "0,0,2.060814",
-        "Scale": "5,5,5",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "f259d6e9-ca2d-42b8-95f7-9e6bb830137c",
-            "BodyGroups": 18446744073709551615,
-            "CreateAttachments": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "Sandbox.ModelCollider",
-            "__guid": "8da9ff2a-0223-4e93-afe7-e8af0a614358",
-            "Friction": null,
-            "IsTrigger": false,
-            "Model": "models/3dmodelscc0/gunsexplosives/pipe_bomb/pipe_bomb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "Sandbox.Rigidbody",
-            "__guid": "b402f3e6-63af-49aa-b5ed-95a03a187d8c",
-            "AngularDamping": 0,
-            "Gravity": true,
-            "LinearDamping": 0,
-            "Locking": {
-              "X": true,
-              "Y": false,
-              "Z": false,
-              "Pitch": true,
-              "Yaw": true,
-              "Roll": false
-            },
-            "MassCenterOverride": "0,0,0",
-            "MassOverride": 0,
-            "MotionEnabled": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OverrideMassCenter": false,
-            "RigidbodyFlags": 0,
-            "StartAsleep": false
-          },
-          {
-            "__type": "Bomb",
-            "__guid": "56f25ff1-7579-45d8-be68-9a7e55ce84e9",
-            "ExplosionPrefab": {
-              "_type": "gameobject",
-              "prefab": "particles/explosion/explosion.medium.prefab"
-            },
-            "ExplosionSound": "sounds/explosion_urban.sound",
-            "FuseTime": 0.25,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Power": 5000,
-            "Radius": 150,
-            "Volume": 0.2
           }
         ]
       }

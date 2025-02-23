@@ -14,7 +14,7 @@
           "prefab": "particles/explosion/explosion.medium.prefab"
         },
         "ExplosionSound": "sounds/explosion_urban.sound",
-        "FuseTime": 3,
+        "FuseTime": "3",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,

@@ -10,5 +10,13 @@ public sealed class ClusterBomb : Component
 			i.Velocity += Vector3.Random.Normal.WithX( 0 ) * Speed;
 			i.LocalRotation = Rotation.Random;
 		}
+
+		Delete();
+	}
+
+	async void Delete()
+	{
+		await Task.DelayRealtimeSeconds( 3 );
+		GameObject.Destroy();
 	}
 }

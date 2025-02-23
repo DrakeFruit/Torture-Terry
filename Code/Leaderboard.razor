@@ -1,0 +1,36 @@
+@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Sandbox.Services
+@namespace TortureTerry
+@inherits Sandbox.PanelComponent
+
+<root>
+	<div class="Score">@Score</div>
+	<div class="Leaderboard">
+		@foreach ( var i in Leaderboards.Get( "score" ).Entries )
+		{
+			<div class="LeaderboardEntry">@i.DisplayName @i.(int)Value</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	public static int Score { get; set; }
+	public static List<Terry> Terries { get; set; } = [];
+	public Leaderboards.Board Scoreboard { get; set; }
+
+	protected override void OnStart()
+	{
+		Terries.Clear();
+		Terries.Add( Scene.Components.Get<Terry>() );
+		Scoreboard = Leaderboards.Get( "score" );
+		Score = (int)Scoreboard.Entries.FirstOrDefault( x => x.Me ).Value;
+	}
+
+	protected override int BuildHash()
+	{
+		return (int)Score;
+	}
+}

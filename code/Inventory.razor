@@ -1,6 +1,7 @@
 @using System.Collections.Generic
-@using Sandbox;
-@using Sandbox.UI;
+@using Sandbox
+@using Sandbox.UI
+@namespace TortureTerry
 @inherits PanelComponent
 
 <root>
@@ -24,8 +25,7 @@
 	}
 	private void SpawnItem( Item i )
 	{
-		var go = i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
-		
+		i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
 	}
 	protected override int BuildHash()
 	{
