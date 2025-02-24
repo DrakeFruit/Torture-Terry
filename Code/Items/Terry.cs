@@ -3,7 +3,7 @@ using Sandbox;
 using Sandbox.Services;
 
 namespace TortureTerry;
-public sealed class Terry : Component, Component.IDamageable, Component.ICollisionListener
+public class Terry : Component, Component.IDamageable, Component.ICollisionListener
 {
 	[RequireComponent] private ModelPhysics Physics { get; set; }
 	public Inventory Inventory;
@@ -27,7 +27,7 @@ public sealed class Terry : Component, Component.IDamageable, Component.ICollisi
 			var damage = (int)( (speed / minImpactSpeed * impactDamage) / 20 ) / Leaderboard.Terries.Count();
 			if ( damage < 1 ) damage = 1;
 			Stats.Increment( "score", damage );
-			Leaderboard.Score += damage;
+			PlayerData.Score += damage;
 		}
 	}
 	

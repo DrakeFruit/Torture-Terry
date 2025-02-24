@@ -14,22 +14,34 @@ Inventory
 		margin-left: 15px;
 		width: 150px;
 		height: 150px;
+
+		&:hover
+		{
+			transform: scale(1.1);
+		}
+
+		&:active
+		{
+			sound-in: ui.button.press;
+		}
 	}
 	
 	.itemContainer
 	{
 		pointer-events: all;
-		overflow-x: scroll;
+		overflow-y: scroll;
+		overflow-x: hidden;
 		width: 100%;
 		height: 100%;
 		margin: 10px;
-		max-width: 28.2%;
+		max-width: 28.4%;
 		max-height: 50%;
 		background-color: rgba(0, 0, 0, 0.5);
 		flex-wrap: wrap;
 		flex-direction: row;
 		gap: 20px;
 		padding: 20px;
+		border: 4px solid white;
 	}
 	
 	.hide
@@ -43,5 +55,23 @@ Inventory
 		width: 150px;
 		height: 150px;
 		border: 6px solid white;
+		
+		&:hover
+		{
+			background-color: green;
+		}
+		
+		image
+		{
+			&:hover
+			{
+				transform: scale(1.1);
+			}
+
+			&:active
+			{
+				sound-in: ui.button.press;
+			}
+		}
 	}
 }

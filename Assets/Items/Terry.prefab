@@ -73,7 +73,7 @@
         "RigidbodyFlags": 0
       },
       {
-        "__type": "Terry",
+        "__type": "TortureTerry.Terry",
         "__guid": "107f81e1-4932-4a6d-bfaf-c91fc9e2537a",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,

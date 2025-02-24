@@ -1,0 +1,72 @@
+@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Threading.Tasks
+@using PizzaClicker
+@using Sandbox
+@using Sandbox.Services
+@using Sandbox.UI
+@namespace TortureTerry
+@inherits Sandbox.PanelComponent
+
+<root>
+	<div class="TopBar">
+		<div class="Score">@ScoreValue</div>
+		<i class="ToggleButton" onclick="@( () => LeaderboardOpen = !LeaderboardOpen )">leaderboard</i>
+	</div>
+	<div class="@( LeaderboardOpen ? "Leaderboard" : "hide" )">
+		@foreach ( var i in Scoreboard.Entries )
+		{
+			<div class="LeaderboardEntry" style="@( i.SteamId == Game.SteamId ? "background-color: grey;" : "" )">
+				<div style="padding-right: 10px;">@(i.Rank).</div>
+				<div>@i.DisplayName</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	public static List<Terry> Terries { get; set; } = [];
+	public Leaderboards.Board2 Scoreboard { get; set; }
+	TimeSince TimeSinceRefresh = 0f;
+	bool LeaderboardOpen = false;
+
+	private string ScoreValue
+	{
+		get
+		{
+			var score = PlayerData.Score;
+			return score < 1_000_000 ? 
+				NumberHelper.ToStringWithCommas( score ) : 
+				NumberHelper.ToStringWithWords( score, false );
+		}
+	}
+
+	protected override void OnStart()
+	{
+		Terries.Clear();
+		Terries.Add( Scene.Components.Get<Terry>() );
+		TimeSinceRefresh = 0;
+	}
+
+	protected override async Task OnLoad()
+	{
+		Scoreboard = Leaderboards.GetFromStat( "score" );
+		await Scoreboard.Refresh();
+	}
+
+	protected override void OnUpdate()
+	{
+		if ( TimeSinceRefresh >= 5 )
+		{
+			Scoreboard.Refresh();
+			TimeSinceRefresh = 0;
+		}
+	}
+
+	protected override int BuildHash()
+	{
+		return PlayerData.Score;
+	}
+}

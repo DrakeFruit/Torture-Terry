@@ -203,6 +203,24 @@
           "Children": []
         },
         {
+          "__guid": "dc83097b-fcc0-4ce7-84a6-5297b50e5a6c",
+          "Flags": 0,
+          "Name": "PlayerData",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.PlayerData",
+              "__guid": "7d11241b-a647-4095-9385-a0eb8930a2e1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
           "__guid": "3b342ca4-5ed9-4ce0-aded-c5b59e859ba7",
           "Flags": 0,
           "Name": "Sun",

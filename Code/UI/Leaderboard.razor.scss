@@ -1,0 +1,71 @@
+Leaderboard
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+	flex-direction: column;
+	margin-right: 15px;
+	margin-top: 15px;
+	width: 40%;
+	height: 100%;
+
+	.TopBar
+	{
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.7);
+		border: 4px solid white;
+		padding-left: 20px;
+		padding-right: 20px;
+		font-size: 65px;
+		font-family: Poppins, serif;
+		color: white;
+	}
+	
+	.Score
+	{
+		margin-bottom: 5px;
+	}
+	
+	.Leaderboard
+	{
+		background-color: rgba(0, 0, 0, 0.7);
+		flex-direction: column;
+		border: 4px solid white;
+		border-top: 0px solid white;
+		align-self: flex-end;
+		width: 60%;
+		height: 80%;
+	}
+	
+	.LeaderboardEntry
+	{
+		width: 100%;
+		color: white;
+		flex-direction: row;
+		padding: 15px;
+		border-bottom: 2px solid white;
+	}
+	
+	.ToggleButton
+	{
+		pointer-events: all;
+		color: #b0afaa;
+		
+		&:hover
+		{
+			color: white;
+		}
+		
+		&:active
+		{
+			sound-in: ui.button.press;
+		}
+	}
+
+	.hide
+	{
+		opacity: 0;
+	}
+}

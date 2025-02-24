@@ -43,12 +43,15 @@
         }
       }
     },
-    "compiled": null
+    "compiled": "textures/generated/text/60c6bf4656052b16.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
     "prefab": "items/cluster bomb.prefab"
   },
+  "Locked": false,
+  "Name": "cluster_bombs",
+  "Price": 0,
   "__references": [],
   "__version": 0
 }
