@@ -27,7 +27,7 @@ public class Terry : Component, Component.IDamageable, Component.ICollisionListe
 			var damage = (int)( (speed / minImpactSpeed * impactDamage) / 20 ) / Leaderboard.Terries.Count();
 			if ( damage < 1 ) damage = 1;
 			Stats.Increment( "score", damage );
-			PlayerData.Score += damage;
+			GameManager.Player.Score += damage;
 		}
 	}
 	

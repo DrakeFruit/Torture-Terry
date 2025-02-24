@@ -6,7 +6,7 @@ namespace Sandbox;
 
 public class PlayerData 
 {
-	public static int Score { get; set; } = 0;
+	public int Score { get; set; } = 0;
 
 	public static bool BombUnlocked { get; set; } = false;
 	

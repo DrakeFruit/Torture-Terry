@@ -36,7 +36,7 @@
 	{
 		get
 		{
-			var score = PlayerData.Score;
+			var score = GameManager.Player.Score;
 			return score < 1_000_000 ? 
 				NumberHelper.ToStringWithCommas( score ) : 
 				NumberHelper.ToStringWithWords( score, false );
@@ -67,6 +67,6 @@
 
 	protected override int BuildHash()
 	{
-		return PlayerData.Score;
+		return GameManager.Player.Score;
 	}
 }

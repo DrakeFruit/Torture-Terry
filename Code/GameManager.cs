@@ -2,18 +2,19 @@
 
 public class GameManager : Component
 {
-	private PlayerData player = new();
+	public static PlayerData Player = new();
 	private RealTimeSince LastSave = 0f;
 	protected override void OnStart()
 	{
-		player = PlayerData.Load();
+		Player = PlayerData.Load();
 	}
 	
 	protected override void OnUpdate()
 	{
-		if ( LastSave > 1f )
+		if ( LastSave > 1 )
 		{
-			player.Save();
+			Player.Save();
+			LastSave = 0;
 		}
 	}
 }

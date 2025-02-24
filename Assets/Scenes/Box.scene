@@ -40,6 +40,7 @@
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
+          "FovAxis": "Horizontal",
           "IsMainCamera": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -71,9 +72,19 @@
     {
       "__guid": "b2a02484-0163-42f4-b676-4ae5a1668569",
       "Flags": 0,
-      "Name": "Interaction Manager",
+      "Name": "Manager",
       "Enabled": true,
       "Components": [
+        {
+          "__type": "Sandbox.GameManager",
+          "__guid": "b11e8318-3bca-4b62-b4d1-923f79ac8e05",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
         {
           "__type": "TortureTerry.InteractionManager",
           "__guid": "10867e00-31c7-453d-a1c3-dab1ed59408a",
@@ -84,6 +95,16 @@
             "go": "60f053db-3f4b-4663-968e-e222c354140c",
             "component_type": "Inventory"
           },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "VisibleCursor",
+          "__guid": "4d0cc606-3f56-4591-a1d6-fa3786815cf4",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -105,16 +126,6 @@
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
-        },
-        {
-          "__type": "VisibleCursor",
-          "__guid": "4d0cc606-3f56-4591-a1d6-fa3786815cf4",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
         }
       ]
     },
@@ -201,24 +212,6 @@
             }
           ],
           "Children": []
-        },
-        {
-          "__guid": "dc83097b-fcc0-4ce7-84a6-5297b50e5a6c",
-          "Flags": 0,
-          "Name": "PlayerData",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.PlayerData",
-              "__guid": "7d11241b-a647-4095-9385-a0eb8930a2e1",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ]
         },
         {
           "__guid": "3b342ca4-5ed9-4ce0-aded-c5b59e859ba7",
