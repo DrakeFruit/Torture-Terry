@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Sandbox;
 using Sandbox.Audio;
 using Sandbox.Services;
+using GameManager = TortureTerry.GameManager;
 
 public sealed class Bomb : Component
 {
@@ -31,6 +32,7 @@ public sealed class Bomb : Component
 				if ( rb != null ) rb.ApplyImpulse( impulse );
 				if ( mp != null )
 				{
+					GameManager.Player.Score += 50;
 					foreach ( var x in mp.PhysicsGroup.Bodies )
 					{ 
 						x.ApplyImpulse( impulse );
