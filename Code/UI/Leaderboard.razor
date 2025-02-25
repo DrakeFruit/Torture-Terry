@@ -18,8 +18,11 @@
 		@foreach ( var i in Scoreboard.Entries )
 		{
 			<div class="LeaderboardEntry" style="@( i.SteamId == Game.SteamId ? "background-color: grey;" : "" )">
-				<div style="padding-right: 10px;">@(i.Rank).</div>
-				<div>@i.DisplayName</div>
+				<div style="width: 100%; flex-grow: 1;">
+					<div style="padding-right: 10px;">@( i.Rank ).</div>
+					<div>@i.DisplayName</div>
+				</div>
+				<div style="flex-shrink: 0;">@( MakeReadable( i.Value ) )</div>
 			</div>
 		}
 	</div>
@@ -37,10 +40,15 @@
 		get
 		{
 			var score = GameManager.Player.Score;
-			return score < 1_000_000 ? 
-				NumberHelper.ToStringWithCommas( score ) : 
-				NumberHelper.ToStringWithWords( score, false );
+			return MakeReadable( score );
 		}
+	}
+
+	private string MakeReadable(double value)
+	{
+		return value < 1_000_000 ? 
+			NumberHelper.ToStringWithCommas( value ) : 
+			NumberHelper.ToStringWithWords( value, false );
 	}
 
 	protected override void OnStart()
@@ -53,12 +61,14 @@
 	protected override async Task OnLoad()
 	{
 		Scoreboard = Leaderboards.GetFromStat( "score" );
+		Scoreboard.CenterOnSteamId( Game.SteamId );
+		Scoreboard.MaxEntries = 9;
 		await Scoreboard.Refresh();
 	}
 
 	protected override void OnUpdate()
 	{
-		if ( TimeSinceRefresh >= 5 )
+		if ( TimeSinceRefresh >= 1 )
 		{
 			Scoreboard.Refresh();
 			TimeSinceRefresh = 0;

@@ -1,5 +1,6 @@
-﻿namespace Sandbox;
+﻿using Sandbox;
 
+namespace TortureTerry;
 public class GameManager : Component
 {
 	public static PlayerData Player = new();
