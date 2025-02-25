@@ -76,8 +76,8 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.GameManager",
-          "__guid": "b11e8318-3bca-4b62-b4d1-923f79ac8e05",
+          "__type": "TortureTerry.GameManager",
+          "__guid": "84a18ff5-8522-4bf0-b45a-7358444cc039",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
