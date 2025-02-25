@@ -3,10 +3,10 @@ using Sandbox;
 using Sandbox.Services;
 
 namespace TortureTerry;
-public class Terry : Component, Component.IDamageable, Component.ICollisionListener
+public class Terry : Component, Component.ICollisionListener
 {
 	[RequireComponent] private ModelPhysics Physics { get; set; }
-	[Property] Material BloodTexture { get; set; }
+	[Property] GameObject BloodMistPrefab { get; set; }
 	private TimeSince TimeSinceLastDamage { get; set; }
 	public Inventory Inventory;
 	protected override void OnStart()
@@ -26,19 +26,19 @@ public class Terry : Component, Component.IDamageable, Component.ICollisionListe
 
 		if ( speed >= minImpactSpeed && TimeSinceLastDamage >= 0.1f )
 		{
-			var damage = (int)( (speed / minImpactSpeed * impactDamage) / 20 ) / Leaderboard.Terries.Count();
+			var damage = (int)( (speed / minImpactSpeed * impactDamage) / 15 ) / Leaderboard.Terries.Count;
 			if ( damage < 1 ) damage = 1;
+			
 			Stats.Increment( "score", damage );
 			GameManager.Player.Score += damage;
-			DecalRenderer decal = new GameObject().Clone(collision.Self.Body.Position).AddComponent<DecalRenderer>();
-			decal.LocalRotation = Rotation.LookAt( collision.Contact.Normal );
-			decal.Material = BloodTexture;
+			
 			TimeSinceLastDamage = 0;
 		}
 	}
-	
-	public void OnDamage( in DamageInfo damage )
+
+	public async void Delete( GameObject obj )
 	{
-		
+		await GameTask.DelayRealtimeSeconds( 2 );
+		obj.Destroy();
 	}
 }

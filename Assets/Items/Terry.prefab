@@ -75,7 +75,10 @@
       {
         "__type": "TortureTerry.Terry",
         "__guid": "107f81e1-4932-4a6d-bfaf-c91fc9e2537a",
-        "BloodTexture": "materials/decals/blood1.vmat",
+        "BloodMistPrefab": {
+          "_type": "gameobject",
+          "prefab": "particles/surfaces/impact.flesh.mist.prefab"
+        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -933,6 +936,8 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "facepunch.impactfleshmist#76364"
+  ],
   "__version": 1
 }
