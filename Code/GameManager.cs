@@ -1,4 +1,5 @@
-﻿using Sandbox;
+﻿using System.Threading.Tasks;
+using Sandbox;
 using Sandbox.Services;
 
 namespace TortureTerry;
@@ -25,5 +26,11 @@ public class GameManager : Component
 			Stats.Increment( "minutes_played", 1 );
 			TimePlayed = 0;
 		}
+	}
+	
+	public async static void Destroy( GameObject obj, float time )
+	{
+		await GameTask.DelayRealtimeSeconds( time );
+		obj.Destroy();
 	}
 }

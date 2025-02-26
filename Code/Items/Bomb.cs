@@ -37,6 +37,7 @@ public sealed class Bomb : Component
 					foreach ( var x in mp.PhysicsGroup.Bodies )
 					{ 
 						x.ApplyImpulse( impulse );
+						GameManager.Destroy( Terry.Bleed( x.Position ), 5 );
 					}
 				}
 			}
@@ -45,14 +46,8 @@ public sealed class Bomb : Component
 			ExplosionSound.Volume = Volume;
 			var sound = Sound.Play( ExplosionSound, WorldPosition );
 			sound.TargetMixer = Mixer.FindMixerByName( "Game" );
-			Destroy( ExplosionPrefab.Clone( WorldPosition ) );
+			GameManager.Destroy( ExplosionPrefab.Clone( WorldPosition ), 5 );
 			GameObject.Destroy();
 		}
-	}
-
-	static async void Destroy( GameObject obj )
-	{
-		await GameTask.DelayRealtimeSeconds( 5 );
-		obj.Destroy();
 	}
 }

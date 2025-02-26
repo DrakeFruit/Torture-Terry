@@ -1,0 +1,94 @@
+{
+  "RootObject": {
+    "__guid": "8ef7eca2-1e74-4727-9044-a3c7ca3513dd",
+    "Flags": 0,
+    "Name": "blood",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "6375bcfd-279e-4c86-9b94-5b081b2da8cd",
+        "Flags": 0,
+        "Name": "Decal",
+        "Rotation": "0,0,-1,0.0000001947072",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Decal",
+            "__guid": "d2904698-e1e5-4593-a2a1-c07d25f20f5f",
+            "__version": 1,
+            "AttenuationAngle": 1,
+            "ColorTexture": {
+              "$compiler": "texture",
+              "$source": "imagefile",
+              "data": {
+                "FilePath": "materials/decal_blood_splatter_03_albedo.png",
+                "MaxSize": 4096,
+                "ConvertHeightToNormals": false,
+                "NormalScale": 1,
+                "Rotate": 0,
+                "FlipVertical": false,
+                "FlipHorizontal": false,
+                "Padding": {
+                  "Size": "0,0",
+                  "EdgeSize": "0,0"
+                },
+                "Sharpen": 0,
+                "Blur": 0,
+                "Brightness": 1,
+                "Contrast": 1,
+                "Saturation": 1,
+                "Hue": 0,
+                "Colorize": false,
+                "TargetColor": "0,1,0,1",
+                "CacheToDisk": true
+              },
+              "compiled": null
+            },
+            "ColorTint": "255,255,255,255",
+            "NormalTexture": null,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RMOTexture": null,
+            "Size": "20,128,128",
+            "SortLayer": 0
+          }
+        ]
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

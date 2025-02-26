@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Sandbox;
 using Sandbox.Services;
@@ -6,7 +7,7 @@ namespace TortureTerry;
 public class Terry : Component, Component.ICollisionListener
 {
 	[RequireComponent] private ModelPhysics Physics { get; set; }
-	[Property] GameObject BloodMistPrefab { get; set; }
+	[Property] public static GameObject BloodPrefab { get; set; }
 	private TimeSince TimeSinceLastDamage { get; set; }
 	public Inventory Inventory;
 	protected override void OnStart()
@@ -32,13 +33,18 @@ public class Terry : Component, Component.ICollisionListener
 			Stats.Increment( "score", damage );
 			GameManager.Player.Score += damage;
 			
+			GameManager.Destroy( Bleed( collision.Self.Body.Position ), 5 );
+			
 			TimeSinceLastDamage = 0;
 		}
 	}
 
-	public async void Delete( GameObject obj )
+	public static GameObject Bleed( Vector3 position )
 	{
-		await GameTask.DelayRealtimeSeconds( 2 );
-		obj.Destroy();
+		var blood = Terry.BloodPrefab.Clone( position.WithX( -25 ) );
+		var r = new Random();
+		blood.LocalRotation = blood.LocalRotation.Angles().WithRoll( r.Int( 0, 360 ) );
+
+		return blood;
 	}
 }
