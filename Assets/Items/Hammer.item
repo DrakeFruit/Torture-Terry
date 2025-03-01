@@ -49,6 +49,9 @@
     "_type": "gameobject",
     "prefab": "items/hammer.prefab"
   },
+  "Locked": false,
+  "Name": "Hammer",
+  "Price": 0,
   "__references": [],
   "__version": 0
 }

@@ -1,4 +1,6 @@
 @using System.Collections.Generic
+@using System.Linq
+@using PizzaClicker
 @using Sandbox
 @using Sandbox.Services
 @using Sandbox.UI
@@ -12,10 +14,13 @@
 		{
 			<div class="entry">
 				<image texture="@i.ItemIcon.ResourcePath" alt="" onclick="@( () => SpawnItem( i ) )"/>
-				@* @if ( i.Locked && Stats.LocalPlayer.Get( i.Name ).Value == 0 ) *@
-				@* { *@
-				@* 	<div class="lock">🔒</div> *@
-				@* } *@
+				@if ( !GameManager.Player.Unlocks.FirstOrDefault( x => x.Key == i.Name ).Value )
+				{
+					<div class="price">
+						<div>🔒</div>
+						<div>@NumberHelper.ToStringAbbreviated( i.Price )</div>
+					</div>
+				}
 			</div>
 		}
 	</div>
@@ -24,16 +29,23 @@
 @code
 {
 	[Property] public Texture MenuIcon { get; set; }
-	[Property] public List<Item> Items { get; set; }
+	[Property] public List<ItemDefinition> Items { get; set; }
+	public static List<ItemDefinition> ItemsAccessor { get; set; }
 	private bool MenuOpen { get; set; } = false;
-	protected override void OnFixedUpdate()
+	protected override void OnStart()
 	{
-		
+		ItemsAccessor = Items;
 	}
 	
-	private void SpawnItem( Item i )
+	private void SpawnItem( ItemDefinition i )
 	{
-		i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
+		var item = GameManager.Player.Unlocks.FirstOrDefault( x => x.Key == i.Name );
+		if ( !item.Value && GameManager.Player.Score >= i.Price )
+		{
+			GameManager.Player.Unlocks[i.Name] = true;
+			GameManager.Player.Score -= i.Price;
+		}
+		if ( item.Value ) i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
 	}
 	
 	protected override int BuildHash()

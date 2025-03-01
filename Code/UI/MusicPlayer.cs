@@ -22,7 +22,7 @@ public sealed class MusicPlayer : Component
     
     protected override void OnFixedUpdate()
     {
-	    if ( !Music.IsPlaying )
+	    if ( Music.Finished )
 	    {
 		    var sound = MusicFiles[r.Int( 0, MusicFiles.Count - 1 )];
 		    sound.UI = true;

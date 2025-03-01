@@ -49,9 +49,9 @@
     "_type": "gameobject",
     "prefab": "items/cluster bomb.prefab"
   },
-  "Locked": false,
-  "Name": "cluster_bombs",
-  "Price": 0,
+  "Locked": true,
+  "Name": "Cluster Bomb",
+  "Price": 25000,
   "__references": [],
   "__version": 0
 }

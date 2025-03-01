@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json;
+using System.Reflection.Metadata.Ecma335;
 using Sandbox.Services;
 
 namespace Sandbox;
@@ -8,11 +8,16 @@ public class PlayerData
 {
 	public int Score { get; set; } = 0;
 
-	public static bool BombUnlocked { get; set; } = false;
+	public Dictionary<string, bool> Unlocks { get; set; }
 	
 	public void Save()
 	{
 		Stats.SetValue( "score", Score );
+		
+		foreach ( var i in TortureTerry.Inventory.ItemsAccessor )
+		{
+			Unlocks.TryAdd( i.Name, !i.Locked );
+		}
 		
 		FileSystem.Data.WriteJson( Game.SteamId.ToString(), this );
 	}

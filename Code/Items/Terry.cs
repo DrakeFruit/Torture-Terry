@@ -4,7 +4,7 @@ using Sandbox;
 using Sandbox.Services;
 
 namespace TortureTerry;
-public class Terry : Component, Component.ICollisionListener
+public class Terry : Component, Component.ICollisionListener, Component.IDamageable
 {
 	[RequireComponent] private ModelPhysics Physics { get; set; }
 	[Property] public static GameObject BloodPrefab { get; set; }
@@ -12,7 +12,7 @@ public class Terry : Component, Component.ICollisionListener
 	protected override void OnStart()
 	{
 		ModelPhysics physics = this.Components.Get<ModelPhysics>();
-		Leaderboard.Terries.Add( this );
+		GameManager.Terries.Add( this );
 	}
 
 	public void OnCollisionStart( Collision collision )
@@ -26,7 +26,7 @@ public class Terry : Component, Component.ICollisionListener
 
 		if ( speed >= minImpactSpeed && TimeSinceLastDamage >= 0.1f )
 		{
-			var damage = (int)( (speed / minImpactSpeed * impactDamage) / 15 ) / Leaderboard.Terries.Count;
+			var damage = (int)( (speed / minImpactSpeed * impactDamage) / 15 ) / GameManager.Terries.Count;
 			if ( damage < 1 ) damage = 1;
 			
 			Stats.Increment( "score", damage );
@@ -49,6 +49,18 @@ public class Terry : Component, Component.ICollisionListener
 
 	protected override void OnDestroy()
 	{
-		Leaderboard.Terries.Remove( this );
+		GameManager.Terries.Remove( this );
+	}
+
+	public void OnDamage( in DamageInfo damage )
+	{
+		if ( damage.Damage < 1 ) damage.Damage = 1;
+			
+		Stats.Increment( "score", damage.Damage );
+		GameManager.Player.Score += damage.Damage.CeilToInt() / GameManager.Terries.Count;
+			
+		GameManager.Destroy( Bleed( damage.Position ), 5 );
+			
+		TimeSinceLastDamage = 0;
 	}
 }

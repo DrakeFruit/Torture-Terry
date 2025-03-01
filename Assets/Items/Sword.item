@@ -49,6 +49,9 @@
     "_type": "gameobject",
     "prefab": "items/sword.prefab"
   },
+  "Locked": false,
+  "Name": "Sword",
+  "Price": 0,
   "__references": [],
   "__version": 0
 }

@@ -30,7 +30,6 @@
 
 @code
 {
-	public static List<Terry> Terries { get; set; } = [];
 	public Leaderboards.Board2 Scoreboard { get; set; }
 	TimeSince TimeSinceRefresh = 0f;
 	bool LeaderboardOpen = false;
@@ -53,8 +52,6 @@
 
 	protected override void OnStart()
 	{
-		Terries.Clear();
-		Terries.Add( Scene.Components.Get<Terry>() );
 		TimeSinceRefresh = 0;
 	}
 

@@ -24,12 +24,15 @@
       "TargetColor": "0,1,0,1",
       "CacheToDisk": true
     },
-    "compiled": null
+    "compiled": "textures/generated/imagefile/c0e4f8859cecb323.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
     "prefab": "items/terry.prefab"
   },
+  "Locked": false,
+  "Name": "Terry",
+  "Price": 0,
   "__references": [],
   "__version": 0
 }

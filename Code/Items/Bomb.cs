@@ -29,15 +29,17 @@ public sealed class Bomb : Component
 				var impulse = (i.WorldPosition - WorldPosition).Normal * Power;
 				var rb = i.Components.Get<Rigidbody>();
 				var mp = i.Components.Get<ModelPhysics>();
+				
 				if ( i == GameObject ) continue;
 				if ( rb != null ) rb.ApplyImpulse( impulse );
+				
 				if ( mp != null )
 				{
-					GameManager.Player.Score += 50 / Leaderboard.Terries.Count;
+					DamageInfo damage = new( 50, GameObject, GameObject );
+					mp.GetComponent<Terry>().OnDamage( damage );
 					foreach ( var x in mp.PhysicsGroup.Bodies )
 					{ 
 						x.ApplyImpulse( impulse );
-						GameManager.Destroy( Terry.Bleed( x.Position ), 5 );
 					}
 				}
 			}
@@ -46,6 +48,7 @@ public sealed class Bomb : Component
 			ExplosionSound.Volume = Volume;
 			var sound = Sound.Play( ExplosionSound, WorldPosition );
 			sound.TargetMixer = Mixer.FindMixerByName( "Game" );
+			
 			GameManager.Destroy( ExplosionPrefab.Clone( WorldPosition ), 5 );
 			GameObject.Destroy();
 		}
