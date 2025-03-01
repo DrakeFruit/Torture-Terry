@@ -13,9 +13,10 @@ public class PlayerData
 	public void Save()
 	{
 		Stats.SetValue( "score", Score );
-		
+		if(TortureTerry.Inventory.ItemsAccessor == null)return;
 		foreach ( var i in TortureTerry.Inventory.ItemsAccessor )
 		{
+			if(!i.IsValid())return;
 			Unlocks.TryAdd( i.Name, !i.Locked );
 		}
 		
