@@ -243,56 +243,25 @@
           "__guid": "3a03966c-25ca-4190-a6d0-33d4e54c082f",
           "Flags": 0,
           "Name": "Music",
-          "Position": "64,0.000003308058,160",
+          "Position": "0,0,160",
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.SoundPointComponent",
-              "__guid": "2a8deaea-efac-4961-a567-c6665f24e1ef",
-              "Distance": 1,
-              "DistanceAttenuation": false,
-              "DistanceAttenuationOverride": false,
-              "Falloff": [
-                {
-                  "x": 0,
-                  "y": 1,
-                  "in": 3.1415927,
-                  "out": -3.1415927,
-                  "mode": "Mirrored"
-                },
-                {
-                  "x": 1,
-                  "y": 0,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                }
+              "__type": "MusicPlayer",
+              "__guid": "be1f3686-8fa6-4430-b591-39874bc95657",
+              "MusicFiles": [
+                "sounds/adventurous_journey.sound",
+                "music/pleasant time.sound",
+                "sounds/no_mallice.sound",
+                "music/the journey home.sound",
+                "music/bouncin to the beat.sound"
               ],
-              "Force2d": true,
-              "MaxRepeatTime": 1,
-              "MinRepeatTime": 1,
-              "Occlusion": false,
-              "OcclusionOverride": true,
-              "OcclusionRadius": 32,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "Pitch": 1,
-              "PlayOnStart": true,
-              "ReflectionOverride": false,
-              "Reflections": false,
-              "Repeat": true,
-              "SoundEvent": "sounds/adventurous_journey.sound",
-              "SoundOverride": true,
-              "StopOnNew": false,
-              "TargetMixer": {
-                "Name": "music",
-                "Id": "f032230b-0203-4537-9531-e3d13ec0f106"
-              },
-              "Volume": 1
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -625,6 +594,10 @@
   "Description": null,
   "__references": [
     "carsonk.mus_adventurous_journey#49009",
+    "carsonk.mus_bouncin_beat#59992",
+    "carsonk.mus_journey_home#59999",
+    "carsonk.mus_no_mallice#49032",
+    "carsonk.mus_pleasant_time#60663",
     "facepunch.testbed#87075"
   ],
   "__version": 2

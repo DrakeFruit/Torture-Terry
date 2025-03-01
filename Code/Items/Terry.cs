@@ -9,7 +9,6 @@ public class Terry : Component, Component.ICollisionListener
 	[RequireComponent] private ModelPhysics Physics { get; set; }
 	[Property] public static GameObject BloodPrefab { get; set; }
 	private TimeSince TimeSinceLastDamage { get; set; }
-	public Inventory Inventory;
 	protected override void OnStart()
 	{
 		ModelPhysics physics = this.Components.Get<ModelPhysics>();
@@ -46,5 +45,10 @@ public class Terry : Component, Component.ICollisionListener
 		blood.LocalRotation = blood.LocalRotation.Angles().WithRoll( r.Int( 0, 360 ) );
 
 		return blood;
+	}
+
+	protected override void OnDestroy()
+	{
+		Leaderboard.Terries.Remove( this );
 	}
 }
