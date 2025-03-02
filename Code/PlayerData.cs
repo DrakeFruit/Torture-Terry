@@ -17,7 +17,7 @@ public class PlayerData
 		if( TortureTerry.Inventory.ItemsAccessor == null ) return;
 		foreach ( var i in TortureTerry.Inventory.ItemsAccessor )
 		{
-			if( !i.IsValid() ) continue;
+			if( !i.IsValid() ) break;
 			Unlocks.TryAdd( i.Name, !i.Locked );
 		}
 		
@@ -27,10 +27,13 @@ public class PlayerData
 	public static PlayerData Load()
 	{
 		var data = FileSystem.Data.ReadJson<PlayerData>( Game.SteamId.ToString() );
-
-		foreach ( var i in data.Unlocks )
+		
+		if ( data != null )
 		{
-			Achievements.Unlock( "unlock_" + i.Key );
+			foreach ( var i in data.Unlocks )
+			{
+				Achievements.Unlock( "unlock_" + i.Key );
+			}
 		}
 		
 		return data ?? new PlayerData(); //new if null
