@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using Sandbox.Services;
+using TortureTerry;
+using Inventory = Sandbox.Services.Inventory;
 
 namespace Sandbox;
 
@@ -32,6 +34,7 @@ public class PlayerData
 		{
 			foreach ( var i in data.Unlocks )
 			{
+				if ( i.Value ) continue;
 				Achievements.Unlock( "unlock_" + i.Key );
 			}
 		}
