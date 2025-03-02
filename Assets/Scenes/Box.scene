@@ -210,7 +210,8 @@
               "OnMapUnloaded": null,
               "UseMapFromLaunch": false
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "3b342ca4-5ed9-4ce0-aded-c5b59e859ba7",

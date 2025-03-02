@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using Sandbox.Services;
 
@@ -13,10 +14,10 @@ public class PlayerData
 	public void Save()
 	{
 		Stats.SetValue( "score", Score );
-		if(TortureTerry.Inventory.ItemsAccessor == null)return;
+		if( TortureTerry.Inventory.ItemsAccessor == null ) return;
 		foreach ( var i in TortureTerry.Inventory.ItemsAccessor )
 		{
-			if(!i.IsValid())return;
+			if( !i.IsValid() ) continue;
 			Unlocks.TryAdd( i.Name, !i.Locked );
 		}
 		
@@ -26,6 +27,12 @@ public class PlayerData
 	public static PlayerData Load()
 	{
 		var data = FileSystem.Data.ReadJson<PlayerData>( Game.SteamId.ToString() );
+
+		foreach ( var i in data.Unlocks )
+		{
+			Achievements.Unlock( "unlock_" + i.Key );
+		}
+		
 		return data ?? new PlayerData(); //new if null
 	}
 }
