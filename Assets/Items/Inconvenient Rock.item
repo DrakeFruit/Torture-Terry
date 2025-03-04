@@ -43,7 +43,7 @@
         }
       }
     },
-    "compiled": null
+    "compiled": "textures/generated/text/7ccec98c715f0250.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
@@ -51,7 +51,9 @@
   },
   "Locked": true,
   "Name": "inconvenient_rock",
-  "Price": 100000,
-  "__references": [],
+  "Price": 10000,
+  "__references": [
+    "facepunch.testbed#87075"
+  ],
   "__version": 0
 }

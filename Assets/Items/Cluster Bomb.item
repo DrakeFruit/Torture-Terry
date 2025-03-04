@@ -51,7 +51,7 @@
   },
   "Locked": true,
   "Name": "cluster",
-  "Price": 10000,
+  "Price": 3000,
   "__references": [],
   "__version": 0
 }
