@@ -86,23 +86,6 @@
           "OnComponentUpdate": null
         },
         {
-          "__type": "TortureTerry.InteractionManager",
-          "__guid": "10867e00-31c7-453d-a1c3-dab1ed59408a",
-          "Gravity": "0,0,-300",
-          "Inventory": {
-            "_type": "component",
-            "component_id": "42ad537d-12a8-48aa-961f-ccb43c1fe7c7",
-            "go": "60f053db-3f4b-4663-968e-e222c354140c",
-            "component_type": "Inventory"
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        },
-        {
           "__type": "VisibleCursor",
           "__guid": "4d0cc606-3f56-4591-a1d6-fa3786815cf4",
           "OnComponentDestroy": null,
@@ -126,6 +109,23 @@
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
+        },
+        {
+          "__type": "TortureTerry.InteractionManager",
+          "__guid": "4b7f8eb5-f5b1-41f5-9d66-637261fd35f8",
+          "Gravity": "0,0,-300",
+          "Inventory": {
+            "_type": "component",
+            "component_id": "42ad537d-12a8-48aa-961f-ccb43c1fe7c7",
+            "go": "60f053db-3f4b-4663-968e-e222c354140c",
+            "component_type": "Inventory"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     },
