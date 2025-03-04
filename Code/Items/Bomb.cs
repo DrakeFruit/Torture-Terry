@@ -11,6 +11,7 @@ public sealed class Bomb : Component
 	[Property] private GameObject ExplosionPrefab { get; set; }
 	[Property] SoundEvent ExplosionSound { get; set; }
 	[Property] float Volume { get; set; }
+	[Property] private int Damage { get; set; }
 	[Property] private float Radius { get; set; } = 150;
 	[Property] private float Power { get; set; } = 5000;
 	private TimeSince Timer { get; set; }
@@ -35,7 +36,7 @@ public sealed class Bomb : Component
 				
 				if ( mp != null )
 				{
-					DamageInfo damage = new( 50, GameObject, GameObject );
+					DamageInfo damage = new( Damage, GameObject, GameObject );
 					mp.GetComponent<Terry>().OnDamage( damage );
 					foreach ( var x in mp.PhysicsGroup.Bodies )
 					{ 

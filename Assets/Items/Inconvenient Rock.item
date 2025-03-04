@@ -10,7 +10,7 @@
       },
       "TextFlags": "CenterHorizontally, CenterVertically, DontClip",
       "TextScope": {
-        "Text": "\uD83D\uDCA5",
+        "Text": "\uD83E\uDD15",
         "TextColor": "1,1,1,1",
         "FontName": "Roboto",
         "FontSize": 64,
@@ -43,15 +43,15 @@
         }
       }
     },
-    "compiled": "textures/generated/text/60c6bf4656052b16.vtex"
+    "compiled": null
   },
   "Prefab": {
     "_type": "gameobject",
-    "prefab": "items/cluster bomb.prefab"
+    "prefab": "items/inconvnient rock.prefab"
   },
   "Locked": true,
-  "Name": "cluster",
-  "Price": 10000,
+  "Name": "inconvenient_rock",
+  "Price": 100000,
   "__references": [],
   "__version": 0
 }

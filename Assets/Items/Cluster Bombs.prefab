@@ -29,6 +29,7 @@
           {
             "__type": "Bomb",
             "__guid": "48693c52-450c-4e37-8c4b-98b745621eb1",
+            "Damage": 25,
             "ExplosionPrefab": {
               "_type": "gameobject",
               "prefab": "particles/explosion/explosion.medium.prefab"
@@ -128,6 +129,7 @@
           {
             "__type": "Bomb",
             "__guid": "73b9e9ef-f492-4aa2-a01f-56bba31a267c",
+            "Damage": 25,
             "ExplosionPrefab": {
               "_type": "gameobject",
               "prefab": "particles/explosion/explosion.medium.prefab"
@@ -227,6 +229,7 @@
           {
             "__type": "Bomb",
             "__guid": "559d744e-384a-4b0b-9758-7ad88c31e598",
+            "Damage": 25,
             "ExplosionPrefab": {
               "_type": "gameobject",
               "prefab": "particles/explosion/explosion.medium.prefab"

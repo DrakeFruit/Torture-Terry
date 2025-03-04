@@ -1,34 +1,14 @@
 {
   "RootObject": {
-    "__guid": "3b1d06a9-7fba-42a4-865e-f48e796ae853",
+    "__guid": "bcf1a1bb-536d-419d-8c71-3522a86de650",
     "Flags": 0,
-    "Name": "bomb",
+    "Name": "inconvnient rock",
     "Tags": "pickup",
     "Enabled": true,
     "Components": [
       {
-        "__type": "Bomb",
-        "__guid": "e5fae977-20cd-4cb1-9235-0fac61542411",
-        "Damage": 50,
-        "ExplosionPrefab": {
-          "_type": "gameobject",
-          "prefab": "particles/explosion/explosion.medium.prefab"
-        },
-        "ExplosionSound": "sounds/explosion_urban.sound",
-        "FuseTime": "3",
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Power": 10000,
-        "Radius": 200,
-        "Volume": 0.6
-      },
-      {
         "__type": "Sandbox.Rigidbody",
-        "__guid": "93929ca3-946f-478a-8706-3cfcdada9d28",
+        "__guid": "a08eafab-8b46-4c77-98bf-e5c7e81160cb",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -41,7 +21,7 @@
           "Roll": false
         },
         "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
+        "MassOverride": 300,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -56,37 +36,27 @@
     ],
     "Children": [
       {
-        "__guid": "54f0ad1a-bfa6-4257-ba89-e7390ef1632d",
+        "__guid": "5423e5dd-a1fe-4788-ab4b-7b2f53217f84",
         "Flags": 0,
-        "Name": "bomb",
+        "Name": "Model",
+        "Rotation": "-0.1885883,0.0290273,0.9702019,0.1493324",
+        "Scale": "0.15,0.15,0.15",
         "Enabled": true,
         "Components": [
           {
-            "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "9ff193b3-0e4e-4d84-a0b7-7f283d509443",
-            "AnimationGraph": null,
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "b242ad87-a25f-469c-ad1b-4a2d0c84e57f",
             "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": null,
             "CreateAttachments": false,
-            "CreateBoneObjects": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
-            "Model": "models/bomb/bomb.vmdl",
-            "Morphs": {},
+            "Model": "models/rust_nature/rocks/rock_cliff_a.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
-            "Parameters": {
-              "bools": {},
-              "ints": {},
-              "floats": {},
-              "vectors": {},
-              "rotations": {}
-            },
-            "PlaybackRate": 1,
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": false,
@@ -94,16 +64,21 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Sequence": {
-              "Name": null
-            },
-            "Tint": "1,1,1,1",
-            "UseAnimGraph": true
-          },
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "387df0b1-7e89-42e8-b9e8-8387f51e2181",
+        "Flags": 0,
+        "Name": "Collider",
+        "Position": "-4,2,12",
+        "Enabled": true,
+        "Components": [
           {
-            "__type": "Sandbox.SphereCollider",
-            "__guid": "6625dafa-b1ae-42e1-9f6f-120c01695d68",
-            "Center": "0,0,12.90001",
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "ddba9f7b-4dd6-4d25-8e53-84f847e23149",
+            "Center": "0,22.46094,-0.4965839",
             "Friction": null,
             "IsTrigger": false,
             "OnComponentDestroy": null,
@@ -116,7 +91,37 @@
             "OnObjectTriggerExit": null,
             "OnTriggerEnter": null,
             "OnTriggerExit": null,
-            "Radius": 13.299947,
+            "Scale": "50,54.62833,56.93652",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          }
+        ]
+      },
+      {
+        "__guid": "8e6284ac-96e1-4125-83ed-32d2dd3e8a92",
+        "Flags": 0,
+        "Name": "Collider (1)",
+        "Position": "-4,-44,7.999998",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "b86c7872-e529-4f35-94bc-b56288190353",
+            "Center": "0,22.83203,-0.4960938",
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "Scale": "50,53.88614,45.04297",
             "Static": false,
             "Surface": null,
             "SurfaceVelocity": "0,0,0"
@@ -124,34 +129,7 @@
         ]
       }
     ],
-    "__variables": [
-      {
-        "Id": "Radius",
-        "Title": "Radius",
-        "Description": null,
-        "Group": null,
-        "Order": 0,
-        "Targets": [
-          {
-            "Id": "e5fae977-20cd-4cb1-9235-0fac61542411",
-            "Property": "Radius"
-          }
-        ]
-      },
-      {
-        "Id": "Power",
-        "Title": "Power",
-        "Description": null,
-        "Group": null,
-        "Order": 0,
-        "Targets": [
-          {
-            "Id": "e5fae977-20cd-4cb1-9235-0fac61542411",
-            "Property": "Power"
-          }
-        ]
-      }
-    ],
+    "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,
       "MaxFixedUpdates": 5,
@@ -182,8 +160,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "baik.bomb#19525",
-    "facepunch.explosionmedium#78691"
+    "facepunch.testbed#87075"
   ],
   "__version": 1
 }
