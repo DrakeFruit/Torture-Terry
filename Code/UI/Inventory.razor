@@ -31,6 +31,7 @@
 	[Property] public Texture MenuIcon { get; set; }
 	[Property] public List<ItemDefinition> Items { get; set; }
 	public static List<ItemDefinition> ItemsAccessor { get; set; }
+	public static GameObject HeldItem { get; set; }
 	private bool MenuOpen { get; set; } = false;
 	protected override void OnStart()
 	{
@@ -45,7 +46,14 @@
 			GameManager.Player.Unlocks[i.Name] = true;
 			GameManager.Player.Score -= i.Price;
 		}
-		if ( item.Value ) i.Prefab.Clone( Vector3.Zero.WithZ( 196 ) );
+		
+		if ( HeldItem.IsValid() ) HeldItem.Destroy();
+
+		if ( item.Value )
+		{
+			var obj = i.Prefab.Clone( i.Held ? InteractionManager.Tr.HitPosition.WithX( 0 ) : Vector3.Zero.WithZ( 196 ) );
+			if ( i.Held ) HeldItem = obj;
+		}
 	}
 	
 	protected override int BuildHash()

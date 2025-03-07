@@ -8,6 +8,7 @@ public sealed class InteractionManager : Component
 {
 	[Property] Inventory Inventory { get; set; }
     [Property] Vector3 Gravity { get; set; }
+    public static SceneTraceResult Tr { get; set; }
     private PhysicsBody HeldBody;
     private GameObject HeldObject;
     private ModelPhysics HeldRagdoll;
@@ -24,13 +25,34 @@ public sealed class InteractionManager : Component
 		CursorBody = new PhysicsBody( Scene.PhysicsWorld ) { BodyType = PhysicsBodyType.Keyframed };
 	}
 	
+	protected override void OnUpdate()
+	{
+		var item = Inventory.HeldItem;
+		if ( item.IsValid() )
+		{
+			if ( Mouse.Delta.Length > 0 )
+			{
+				var newRotation = Rotation.FromRoll( MathX.RadianToDegree( MathF.Atan2( -Mouse.Delta.x, -Mouse.Delta.y ) ) + 90f );
+				item.WorldRotation = Rotation.Slerp( item.WorldRotation, newRotation, 0.02f );
+				//item.WorldRotation *= Rotation.FromPitch( item.WorldRotation.Angles().roll > 90 ? 180f : 0 );
+				// TODO: Figure out how the fuck to turn the item around
+			}
+		}
+	}
+	
 	protected override void OnFixedUpdate()
 	{
-		var tr = Scene.Trace.Ray( Scene.Camera.ScreenPixelToRay( Mouse.Position ), 1000 ).Run();
-		CursorBody.Position = tr.EndPosition.WithX( 0 );
+		Tr = Scene.Trace.Ray( Scene.Camera.ScreenPixelToRay( Mouse.Position ), 1000 ).Run();
+		CursorBody.Position = Tr.EndPosition.WithX( 0 );
 
-		if ( Input.Down( "attack1" ) && !HeldBody.IsValid() ) Pickup( tr );
-		if ( !Input.Down( "attack1" ) && HeldBody.IsValid() ) Drop( tr );
+		var item = Inventory.HeldItem;
+		if ( item.IsValid() )
+		{
+			item.WorldPosition = Tr.EndPosition.WithX( 0 );
+		}
+
+		if ( Input.Down( "attack1" ) && !HeldBody.IsValid() ) Pickup( Tr );
+		if ( !Input.Down( "attack1" ) && HeldBody.IsValid() ) Drop( Tr );
 	}
 
 	public void Pickup(SceneTraceResult tr)

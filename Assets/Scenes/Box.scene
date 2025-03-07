@@ -159,7 +159,8 @@
             "items/hammer.item",
             "items/bomb.item",
             "items/cluster bomb.item",
-            "items/inconvenient rock.item"
+            "items/inconvenient rock.item",
+            "items/usp.item"
           ],
           "MenuIcon": "textures/generated/text/62e519703d0e5ccd.vtex",
           "OnComponentDestroy": null,

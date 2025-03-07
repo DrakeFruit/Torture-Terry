@@ -1,0 +1,109 @@
+{
+  "RootObject": {
+    "__guid": "979fc82b-27ff-4521-aa2d-bca2e3099b2c",
+    "Flags": 0,
+    "Name": "usp",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "TortureTerry.USP",
+        "__guid": "7abccf9a-5d89-4396-86c3-3fff22edbaf0",
+        "Barrel": {
+          "_type": "gameobject",
+          "go": "2c764e95-2127-49b8-86fd-883f2678745e"
+        },
+        "Cooldown": 0.1,
+        "Damage": 15,
+        "FireSound": "sounds/luger pistol fire.sound",
+        "MuzzleFlash": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapon_effects/pistol_muzzleflash.prefab"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "PushForce": 5
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "ad03a1cc-6a4b-451e-8696-ef78401f00d4",
+        "Flags": 0,
+        "Name": "w_usp",
+        "Position": "0,-16,-24.5",
+        "Rotation": "0,0,0.7071068,0.7071068",
+        "Scale": "5,5,5",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "f639e1b8-289b-428f-9695-0cdfcd99a66a",
+            "BodyGroups": 39,
+            "CreateAttachments": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "2c764e95-2127-49b8-86fd-883f2678745e",
+        "Flags": 0,
+        "Name": "Barrel",
+        "Position": "0,3,0",
+        "Enabled": true
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "facepunch.pistol_muzzleflash#76089",
+    "facepunch.w_usp#77979"
+  ],
+  "__version": 1
+}

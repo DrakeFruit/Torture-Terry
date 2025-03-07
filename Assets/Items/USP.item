@@ -3,7 +3,7 @@
     "$compiler": "texture",
     "$source": "imagefile",
     "data": {
-      "FilePath": "materials/rock_cliff_a.png",
+      "FilePath": "materials/usp-icon.png",
       "MaxSize": 4096,
       "ConvertHeightToNormals": false,
       "NormalScale": 1,
@@ -28,12 +28,12 @@
   },
   "Prefab": {
     "_type": "gameobject",
-    "prefab": "items/inconvnient rock.prefab"
+    "prefab": "items/usp.prefab"
   },
   "Locked": true,
-  "Held": false,
-  "Name": "inconvenient_rock",
-  "Price": 10000,
+  "Held": true,
+  "Name": "usp",
+  "Price": 500,
   "__references": [],
   "__version": 0
 }
