@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Luger Pistol Fire",
+      "Type": "sound",
+      "Org": "drakefruit",
+      "Ident": "lugerpistolfire",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/luger pistol fire.sound"
+      }
+    }
+  }
+}

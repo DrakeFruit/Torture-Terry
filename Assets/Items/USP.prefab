@@ -8,16 +8,17 @@
       {
         "__type": "TortureTerry.USP",
         "__guid": "7abccf9a-5d89-4396-86c3-3fff22edbaf0",
+        "Automatic": false,
         "Barrel": {
           "_type": "gameobject",
           "go": "2c764e95-2127-49b8-86fd-883f2678745e"
         },
-        "Cooldown": 0.1,
-        "Damage": 15,
+        "Cooldown": 0.2,
+        "Damage": 8,
         "FireSound": "sounds/luger pistol fire.sound",
         "MuzzleFlash": {
           "_type": "gameobject",
-          "prefab": "prefabs/weapon_effects/pistol_muzzleflash.prefab"
+          "prefab": "prefabs/muzzle flash.prefab"
         },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -33,7 +34,7 @@
         "__guid": "ad03a1cc-6a4b-451e-8696-ef78401f00d4",
         "Flags": 0,
         "Name": "w_usp",
-        "Position": "0,-16,-24.5",
+        "Position": "0,-32,-24.5",
         "Rotation": "0,0,0.7071068,0.7071068",
         "Scale": "5,5,5",
         "Enabled": true,
@@ -67,7 +68,7 @@
         "__guid": "2c764e95-2127-49b8-86fd-883f2678745e",
         "Flags": 0,
         "Name": "Barrel",
-        "Position": "0,3,0",
+        "Position": "0,-12,0",
         "Enabled": true
       }
     ],
@@ -102,7 +103,6 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.pistol_muzzleflash#76089",
     "facepunch.w_usp#77979"
   ],
   "__version": 1

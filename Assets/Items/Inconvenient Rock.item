@@ -24,7 +24,7 @@
       "TargetColor": "0,1,0,1",
       "CacheToDisk": true
     },
-    "compiled": null
+    "compiled": "textures/generated/imagefile/52e14ee10cf5340d.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
@@ -33,7 +33,7 @@
   "Locked": true,
   "Held": false,
   "Name": "inconvenient_rock",
-  "Price": 10000,
+  "Price": 50000,
   "__references": [],
   "__version": 0
 }

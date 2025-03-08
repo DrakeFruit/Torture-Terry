@@ -24,7 +24,7 @@
       "TargetColor": "0,1,0,1",
       "CacheToDisk": true
     },
-    "compiled": null
+    "compiled": "textures/generated/imagefile/7ff7c27ff44b1912.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
@@ -33,7 +33,7 @@
   "Locked": true,
   "Held": true,
   "Name": "usp",
-  "Price": 500,
+  "Price": 250,
   "__references": [],
   "__version": 0
 }
