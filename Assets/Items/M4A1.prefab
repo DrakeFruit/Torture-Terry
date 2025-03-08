@@ -8,15 +8,15 @@
       {
         "__type": "TortureTerry.Gun",
         "__guid": "465c2c80-52c0-4279-bf9f-22a26b34b60e",
-        "Automatic": true,
         "Barrel": {
           "_type": "gameobject",
           "go": "8154b9a2-b35f-468d-8cad-25d4eaa298bf"
         },
+        "Capacity": 30,
         "ChamberSound": null,
-        "Cooldown": 0.05,
-        "Damage": 5,
-        "FireSound": "sounds/luger pistol fire.sound",
+        "Cooldown": 0.08,
+        "Damage": 8,
+        "FireSound": "sounds/m4a1 shot.sound",
         "ManualChambering": false,
         "MuzzleFlash": {
           "_type": "gameobject",
@@ -28,7 +28,8 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "PushForce": 2
+        "PushForce": 2,
+        "ReloadSound": "sounds/m4 reload sequence.sound"
       }
     ],
     "Children": [
@@ -36,8 +37,9 @@
         "__guid": "84676eaf-b3f7-49a4-8280-b8fad414f476",
         "Flags": 0,
         "Name": "w_m4a1",
-        "Position": "32,0,-7.385821",
-        "Rotation": "0,0,1,0.0000001947072",
+        "Position": "0,-72,-22.12458",
+        "Rotation": "0,0,0.7071067,0.7071068",
+        "Scale": "3,3,3",
         "Enabled": true,
         "Components": [
           {
@@ -69,7 +71,7 @@
         "__guid": "8154b9a2-b35f-468d-8cad-25d4eaa298bf",
         "Flags": 0,
         "Name": "Barrel",
-        "Position": "12,0,0",
+        "Position": "0,-12,0",
         "Enabled": true
       }
     ],

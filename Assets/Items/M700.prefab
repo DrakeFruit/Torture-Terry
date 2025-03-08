@@ -13,6 +13,7 @@
           "_type": "gameobject",
           "go": "8b67e76d-11d7-42cd-b1dc-db6e690c75fa"
         },
+        "Capacity": 5,
         "ChamberSound": "sounds/bolt action rifle chamber round.sound",
         "Cooldown": 1.5,
         "Damage": 250,
@@ -28,7 +29,8 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "PushForce": 8
+        "PushForce": 8,
+        "ReloadSound": "sounds/m4 reload sequence.sound"
       }
     ],
     "Children": [

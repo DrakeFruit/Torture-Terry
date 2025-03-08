@@ -8,11 +8,12 @@
       {
         "__type": "TortureTerry.USP",
         "__guid": "7abccf9a-5d89-4396-86c3-3fff22edbaf0",
-        "Automatic": false,
+        "Automatic": true,
         "Barrel": {
           "_type": "gameobject",
           "go": "2c764e95-2127-49b8-86fd-883f2678745e"
         },
+        "Capacity": 15,
         "ChamberSound": null,
         "Cooldown": 0.2,
         "Damage": 25,
@@ -28,7 +29,8 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "PushForce": 2
+        "PushForce": 2,
+        "ReloadSound": "sounds/m4 reload sequence.sound"
       }
     ],
     "Children": [
