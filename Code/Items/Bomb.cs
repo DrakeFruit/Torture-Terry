@@ -37,7 +37,10 @@ public sealed class Bomb : Component
 				if ( mp != null )
 				{
 					DamageInfo damage = new( Damage, GameObject, GameObject );
-					mp.GetComponent<Terry>().OnDamage( damage );
+					var terry = mp.GetComponent<Terry>();
+					damage.Position = terry.WorldPosition;
+					damage.IsExplosion = true;
+					terry.OnDamage( damage );
 					foreach ( var x in mp.PhysicsGroup.Bodies )
 					{ 
 						x.ApplyImpulse( impulse );

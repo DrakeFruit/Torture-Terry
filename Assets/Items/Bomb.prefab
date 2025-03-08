@@ -9,7 +9,7 @@
       {
         "__type": "Bomb",
         "__guid": "e5fae977-20cd-4cb1-9235-0fac61542411",
-        "Damage": 50,
+        "Damage": 25,
         "ExplosionPrefab": {
           "_type": "gameobject",
           "prefab": "particles/explosion/explosion.medium.prefab"

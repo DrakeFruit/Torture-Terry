@@ -51,6 +51,7 @@
 
 		if ( item.Value )
 		{
+			if ( i.Name == "terry" && GameManager.Terries.Count >= 15 ) return;
 			var obj = i.Prefab.Clone( i.Held ? InteractionManager.Tr.HitPosition.WithX( 0 ) : Vector3.Zero.WithZ( 196 ) );
 			if ( i.Held ) HeldItem = obj;
 		}

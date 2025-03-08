@@ -57,7 +57,7 @@ public class Terry : Component, Component.ICollisionListener, Component.IDamagea
 		if ( damage.Damage < 1 ) damage.Damage = 1;
 			
 		Stats.Increment( "score", damage.Damage );
-		GameManager.Player.Score += damage.Damage.CeilToInt() / GameManager.Terries.Count;
+		GameManager.Player.Score += damage.Damage.CeilToInt() / ( damage.IsExplosion ? GameManager.Terries.Count : 1 );
 			
 		GameManager.Destroy( Bleed( damage.Position ), 5 );
 			

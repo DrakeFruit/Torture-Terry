@@ -10,7 +10,7 @@
       },
       "TextFlags": "CenterHorizontally, CenterVertically, DontClip",
       "TextScope": {
-        "Text": "\uD83D\uDD28",
+        "Text": "\uD83E\uDD15",
         "TextColor": "1,1,1,1",
         "FontName": "Roboto",
         "FontSize": 64,
@@ -43,16 +43,18 @@
         }
       }
     },
-    "compiled": "textures/generated/text/5cb1911fde69a5c0.vtex"
+    "compiled": "textures/generated/text/7ccec98c715f0250.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
-    "prefab": "items/hammer.prefab"
+    "prefab": "items/m4a1.prefab"
   },
-  "Locked": false,
-  "Held": false,
-  "Name": "hammer",
-  "Price": 0,
-  "__references": [],
+  "Locked": true,
+  "Held": true,
+  "Name": "m4a1",
+  "Price": 15000,
+  "__references": [
+    "facepunch.testbed#87075"
+  ],
   "__version": 0
 }

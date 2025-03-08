@@ -1,21 +1,21 @@
 {
   "RootObject": {
-    "__guid": "979fc82b-27ff-4521-aa2d-bca2e3099b2c",
+    "__guid": "8484f04c-bcdc-48ea-b32b-ee7bfdd23d88",
     "Flags": 0,
-    "Name": "usp",
+    "Name": "m4a1",
     "Enabled": true,
     "Components": [
       {
-        "__type": "TortureTerry.USP",
-        "__guid": "7abccf9a-5d89-4396-86c3-3fff22edbaf0",
-        "Automatic": false,
+        "__type": "TortureTerry.Gun",
+        "__guid": "465c2c80-52c0-4279-bf9f-22a26b34b60e",
+        "Automatic": true,
         "Barrel": {
           "_type": "gameobject",
-          "go": "2c764e95-2127-49b8-86fd-883f2678745e"
+          "go": "8154b9a2-b35f-468d-8cad-25d4eaa298bf"
         },
         "ChamberSound": null,
-        "Cooldown": 0.2,
-        "Damage": 25,
+        "Cooldown": 0.05,
+        "Damage": 5,
         "FireSound": "sounds/luger pistol fire.sound",
         "ManualChambering": false,
         "MuzzleFlash": {
@@ -33,22 +33,21 @@
     ],
     "Children": [
       {
-        "__guid": "ad03a1cc-6a4b-451e-8696-ef78401f00d4",
+        "__guid": "84676eaf-b3f7-49a4-8280-b8fad414f476",
         "Flags": 0,
-        "Name": "w_usp",
-        "Position": "0,-32,-24.5",
-        "Rotation": "0,0,0.7071068,0.7071068",
-        "Scale": "5,5,5",
+        "Name": "w_m4a1",
+        "Position": "32,0,-7.385821",
+        "Rotation": "0,0,1,0.0000001947072",
         "Enabled": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "f639e1b8-289b-428f-9695-0cdfcd99a66a",
-            "BodyGroups": 39,
+            "__guid": "882bb7d1-d9ed-4238-a970-a1e925d9da60",
+            "BodyGroups": 171,
             "CreateAttachments": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
-            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "Model": "models/weapons/sbox_assault_m4a1/w_m4a1.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -67,10 +66,10 @@
         ]
       },
       {
-        "__guid": "2c764e95-2127-49b8-86fd-883f2678745e",
+        "__guid": "8154b9a2-b35f-468d-8cad-25d4eaa298bf",
         "Flags": 0,
         "Name": "Barrel",
-        "Position": "0,-12,0",
+        "Position": "12,0,0",
         "Enabled": true
       }
     ],
@@ -105,7 +104,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.w_usp#77979"
+    "facepunch.w_m4a1#60166"
   ],
   "__version": 1
 }

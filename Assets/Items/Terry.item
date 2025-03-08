@@ -31,8 +31,9 @@
     "prefab": "items/terry.prefab"
   },
   "Locked": false,
-  "Name": "Terry",
-  "Price": 0,
+  "Held": false,
+  "Name": "terry",
+  "Price": 2500,
   "__references": [],
   "__version": 0
 }

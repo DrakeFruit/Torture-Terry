@@ -50,8 +50,9 @@
     "prefab": "items/bomb.prefab"
   },
   "Locked": true,
+  "Held": false,
   "Name": "bomb",
-  "Price": 500,
+  "Price": 250,
   "__references": [],
   "__version": 0
 }

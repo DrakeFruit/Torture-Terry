@@ -50,7 +50,8 @@
     "prefab": "items/sword.prefab"
   },
   "Locked": false,
-  "Name": "Sword",
+  "Held": false,
+  "Name": "sword",
   "Price": 0,
   "__references": [],
   "__version": 0

@@ -50,8 +50,9 @@
     "prefab": "items/cluster bomb.prefab"
   },
   "Locked": true,
+  "Held": false,
   "Name": "cluster",
-  "Price": 3000,
+  "Price": 5000,
   "__references": [],
   "__version": 0
 }

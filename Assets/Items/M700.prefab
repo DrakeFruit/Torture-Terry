@@ -1,23 +1,23 @@
 {
   "RootObject": {
-    "__guid": "979fc82b-27ff-4521-aa2d-bca2e3099b2c",
+    "__guid": "5849e728-f333-498f-b2db-557103b18941",
     "Flags": 0,
-    "Name": "usp",
+    "Name": "m700",
     "Enabled": true,
     "Components": [
       {
-        "__type": "TortureTerry.USP",
-        "__guid": "7abccf9a-5d89-4396-86c3-3fff22edbaf0",
+        "__type": "TortureTerry.Gun",
+        "__guid": "0f7990f1-8a89-4fab-abfc-99cb38ccb44c",
         "Automatic": false,
         "Barrel": {
           "_type": "gameobject",
-          "go": "2c764e95-2127-49b8-86fd-883f2678745e"
+          "go": "8b67e76d-11d7-42cd-b1dc-db6e690c75fa"
         },
-        "ChamberSound": null,
-        "Cooldown": 0.2,
-        "Damage": 25,
-        "FireSound": "sounds/luger pistol fire.sound",
-        "ManualChambering": false,
+        "ChamberSound": "sounds/bolt action rifle chamber round.sound",
+        "Cooldown": 1.5,
+        "Damage": 250,
+        "FireSound": "sounds/bolt action rifle shot.sound",
+        "ManualChambering": true,
         "MuzzleFlash": {
           "_type": "gameobject",
           "prefab": "prefabs/muzzle flash.prefab"
@@ -28,27 +28,27 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "PushForce": 2
+        "PushForce": 8
       }
     ],
     "Children": [
       {
-        "__guid": "ad03a1cc-6a4b-451e-8696-ef78401f00d4",
+        "__guid": "b00b3b9c-9050-453f-b1b3-3a7c7e57dcba",
         "Flags": 0,
-        "Name": "w_usp",
-        "Position": "0,-32,-24.5",
-        "Rotation": "0,0,0.7071068,0.7071068",
-        "Scale": "5,5,5",
+        "Name": "w_m700",
+        "Position": "-0.00002471326,-52.75768,-13.04446",
+        "Rotation": "0,0,0.7071067,0.7071068",
+        "Scale": "2,2,2",
         "Enabled": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "f639e1b8-289b-428f-9695-0cdfcd99a66a",
-            "BodyGroups": 39,
+            "__guid": "b292ee87-af12-4f0f-a832-6a46262942d2",
+            "BodyGroups": 171,
             "CreateAttachments": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
-            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "Model": "models/weapons/sbox_sniper_m700/w_m700.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "__guid": "2c764e95-2127-49b8-86fd-883f2678745e",
+        "__guid": "8b67e76d-11d7-42cd-b1dc-db6e690c75fa",
         "Flags": 0,
         "Name": "Barrel",
         "Position": "0,-12,0",
@@ -105,7 +105,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.w_usp#77979"
+    "facepunch.w_m700#71263"
   ],
   "__version": 1
 }
