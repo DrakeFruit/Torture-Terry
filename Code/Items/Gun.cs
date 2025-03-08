@@ -32,7 +32,7 @@ public class Gun : Component
 	}
 	protected override void OnFixedUpdate()
 	{
-		if ( ReloadHandle.IsValid() && ReloadHandle.Finished )
+		if ( !ReloadHandle.IsValid() && Reloading )
 		{
 			Ammo = Capacity;
 			Reloading = false;
@@ -53,6 +53,7 @@ public class Gun : Component
 		}
 		
 		Ammo--;
+		Log.Info(Ammo  );
 		
 		var tr = Scene.Trace
 			.Ray( Barrel.WorldPosition, Barrel.WorldPosition + Barrel.WorldRotation.Left * 1000f )

@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Bolt Action Rifle Chamber Round",
+      "Type": "sound",
+      "Org": "drakefruit",
+      "Ident": "bolty_chamber_round",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/bolt action rifle chamber round.sound"
+      }
+    }
+  }
+}

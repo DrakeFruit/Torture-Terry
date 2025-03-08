@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Bolt Action Reload Sequence",
+      "Type": "sound",
+      "Org": "drakefruit",
+      "Ident": "bolty_reload",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/bolt action reload sequence.sound"
+      }
+    }
+  }
+}

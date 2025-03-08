@@ -1,49 +1,30 @@
 {
   "ItemIcon": {
     "$compiler": "texture",
-    "$source": "text",
+    "$source": "imagefile",
     "data": {
-      "Size": "128,128",
-      "Margin": {
+      "FilePath": "materials/m700.png",
+      "MaxSize": 4096,
+      "ConvertHeightToNormals": false,
+      "NormalScale": 1,
+      "Rotate": 0,
+      "FlipVertical": false,
+      "FlipHorizontal": false,
+      "Padding": {
         "Size": "0,0",
         "EdgeSize": "0,0"
       },
-      "TextFlags": "CenterHorizontally, CenterVertically, DontClip",
-      "TextScope": {
-        "Text": "\uD83E\uDD15",
-        "TextColor": "1,1,1,1",
-        "FontName": "Roboto",
-        "FontSize": 64,
-        "FontWeight": 400,
-        "FontItalic": false,
-        "LineHeight": 1,
-        "LetterSpacing": 0,
-        "WordSpacing": 0,
-        "Outline": {
-          "Enabled": false,
-          "Size": 4,
-          "Color": "0,0,1,1"
-        },
-        "Shadow": {
-          "Enabled": false,
-          "Size": 4,
-          "Color": "0,0,0,1",
-          "Offset": "4,4"
-        },
-        "OutlineUnder": {
-          "Enabled": false,
-          "Size": 4,
-          "Color": "0,1,0,1"
-        },
-        "ShadowUnder": {
-          "Enabled": false,
-          "Size": 4,
-          "Color": "0,0,0,1",
-          "Offset": "4,4"
-        }
-      }
+      "Sharpen": 0,
+      "Blur": 0,
+      "Brightness": 1,
+      "Contrast": 1,
+      "Saturation": 1,
+      "Hue": 0,
+      "Colorize": false,
+      "TargetColor": "0,1,0,1",
+      "CacheToDisk": true
     },
-    "compiled": "textures/generated/text/7ccec98c715f0250.vtex"
+    "compiled": null
   },
   "Prefab": {
     "_type": "gameobject",
@@ -53,8 +34,6 @@
   "Held": true,
   "Name": "m700",
   "Price": 10000,
-  "__references": [
-    "facepunch.testbed#87075"
-  ],
+  "__references": [],
   "__version": 0
 }

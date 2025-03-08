@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "M4A1 Shot",
+      "Type": "sound",
+      "Org": "drakefruit",
+      "Ident": "m4a1_shot",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/m4a1 shot.sound"
+      }
+    }
+  }
+}

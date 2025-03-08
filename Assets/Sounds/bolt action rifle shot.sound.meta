@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Bolt Action Rifle Shot",
+      "Type": "sound",
+      "Org": "drakefruit",
+      "Ident": "bolty_shot",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/bolt action rifle shot.sound"
+      }
+    }
+  }
+}
