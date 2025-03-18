@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using Sandbox.Services;
@@ -17,28 +18,29 @@ public class PlayerData
 	{
 		Stats.SetValue( "score", Score );
 		if( TortureTerry.Inventory.ItemsAccessor == null ) return;
-		foreach ( var i in TortureTerry.Inventory.ItemsAccessor )
+		foreach ( var i in TortureTerry.Inventory.ItemsAccessor.Where( i => i.IsValid() ) )
 		{
-			if( !i.IsValid() ) break;
 			Unlocks.TryAdd( i.Name, !i.Locked );
 		}
 		
-		FileSystem.Data.WriteJson( Game.SteamId.ToString(), this );
+		FileSystem.Data.WriteJson( Game.SteamId + " - 1.0", this );
 	}
 
-	public static PlayerData Load()
+	public PlayerData Load()
 	{
-		var data = FileSystem.Data.ReadJson<PlayerData>( Game.SteamId.ToString() );
+		var data = FileSystem.Data.ReadJson<PlayerData>( Game.SteamId + " - 1.0" );
+		Unlocks = data.Unlocks;
 		
-		if ( data != null )
+		if ( Unlocks != null )
 		{
-			foreach ( var i in data.Unlocks )
+			foreach ( var i in Unlocks.Where( i => i.Value ) )
 			{
-				if ( i.Value ) continue;
-				Achievements.Unlock( "unlock_" + i.Key );
+				try { Achievements.Unlock( "unlock_" + i.Key ); }
+				catch ( Exception e ) { Log.Info("no achievement for unlock_" + i.Key); Log.Info( e ); }
 			}
 		}
 		
-		return data ?? new PlayerData(); //new if null
+		if ( data.Unlocks == null || data.Unlocks.Count == 0 || data.Score == 0 ) return new PlayerData();
+		return data;
 	}
 }

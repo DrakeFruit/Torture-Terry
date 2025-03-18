@@ -52,7 +52,7 @@
   "Locked": true,
   "Held": false,
   "Name": "bomb",
-  "Price": 250,
+  "Price": 50,
   "__references": [],
   "__version": 0
 }

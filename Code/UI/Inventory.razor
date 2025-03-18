@@ -45,6 +45,7 @@
 		{
 			GameManager.Player.Unlocks[i.Name] = true;
 			GameManager.Player.Score -= i.Price;
+			Achievements.Unlock( "unlock_" + i.Name );
 		}
 		
 		if ( HeldItem.IsValid() ) HeldItem.Destroy();

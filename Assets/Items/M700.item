@@ -24,7 +24,7 @@
       "TargetColor": "0,1,0,1",
       "CacheToDisk": true
     },
-    "compiled": null
+    "compiled": "textures/generated/imagefile/99a46fcaaee65c19.vtex"
   },
   "Prefab": {
     "_type": "gameobject",
@@ -33,7 +33,7 @@
   "Locked": true,
   "Held": true,
   "Name": "m700",
-  "Price": 10000,
+  "Price": 5000,
   "__references": [],
   "__version": 0
 }

@@ -2,7 +2,7 @@
   "RootObject": {
     "__guid": "c81d197a-9f2b-48a5-bd68-021329f19394",
     "Flags": 0,
-    "Name": "Object",
+    "Name": "muzzle flash",
     "Enabled": true,
     "Children": [
       {
@@ -295,7 +295,7 @@
               "AfterUILayer": false
             },
             "RotationOffset": 339.53,
-            "Scale": 6,
+            "Scale": 3,
             "Shadows": false,
             "SortMode": "Unsorted",
             "Texture": "materials/particles/smoke/render/smokeloop_i_1.vtex"
@@ -550,7 +550,7 @@
               "AfterUILayer": false
             },
             "RotationOffset": 0,
-            "Scale": 6,
+            "Scale": 3,
             "Shadows": false,
             "SortMode": "Unsorted",
             "Texture": "materials/particles/light_flare/light_glow_01.vtex"
@@ -786,7 +786,7 @@
               "AfterUILayer": false
             },
             "RotationOffset": 0,
-            "Scale": 6,
+            "Scale": 3,
             "Shadows": false,
             "SortMode": "Unsorted",
             "Texture": "materials/particles/spark_white.vtex"
@@ -1000,7 +1000,7 @@
               "AfterUILayer": false
             },
             "RotationOffset": 0,
-            "Scale": 6,
+            "Scale": 3,
             "Shadows": false,
             "SortMode": "Unsorted",
             "Texture": "materials/particles/smoke/render/smokeloop_i_0.vtex"
@@ -1236,7 +1236,7 @@
               "AfterUILayer": false
             },
             "RotationOffset": 0,
-            "Scale": 6,
+            "Scale": 3,
             "Shadows": false,
             "SortMode": "Unsorted",
             "Texture": "materials/particles/smoke/render/smokeloop_g_1.vtex"
@@ -1495,7 +1495,7 @@
               "AfterUILayer": false
             },
             "RotationOffset": 0,
-            "Scale": 6,
+            "Scale": 3,
             "Shadows": false,
             "SortMode": "Unsorted",
             "Texture": "materials/particles/particle_glow_05.vtex"
@@ -1528,15 +1528,37 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__references": [
-    "facepunch.rifle_muzzleflash#76090"
-  ],
+  "__references": [],
   "__version": 1
 }

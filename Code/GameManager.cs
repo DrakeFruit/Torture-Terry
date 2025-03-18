@@ -8,12 +8,14 @@ public class GameManager : Component
 {
 	public static PlayerData Player { get; set; } = new();
 	public static List<Terry> Terries { get; set; } = [];
-	private RealTimeSince LastSave = 0f;
-	private RealTimeSince TimePlayed = 0f;
+	RealTimeSince LastSave = 0f;
+	RealTimeSince TimePlayed = 0f;
 	protected override void OnStart()
 	{
-		Player = PlayerData.Load();
-		if ( Player.Unlocks == null ) Player.Unlocks = new();
+		Player = new PlayerData();
+		Player = Player.Load();
+		
+		Player.Unlocks ??= new Dictionary<string, bool>();
 		
 		Player.Save();
 	}
