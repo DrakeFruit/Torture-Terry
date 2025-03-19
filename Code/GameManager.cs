@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
 using Sandbox;
 using Sandbox.Services;
 
@@ -12,12 +12,20 @@ public class GameManager : Component
 	RealTimeSince TimePlayed = 0f;
 	protected override void OnStart()
 	{
-		Player = new PlayerData();
-		Player = Player.Load();
+		try
+		{
+			Player = new PlayerData();
+			Player = Player.Load();
 		
-		Player.Unlocks ??= new Dictionary<string, bool>();
+			Player.Unlocks ??= new Dictionary<string, bool>();
 		
-		Player.Save();
+			Player.Save();
+		}
+		catch ( Exception e )
+		{
+			Log.Error( e );
+			Log.Error( "Report this error to @DrakeFruit on Discord" );
+		}
 	}
 	
 	protected override void OnUpdate()

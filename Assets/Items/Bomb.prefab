@@ -183,7 +183,7 @@
   "ResourceVersion": 1,
   "__references": [
     "baik.bomb#19525",
-    "facepunch.explosionmedium#78691"
+    "facepunch.explosionmedium#88481"
   ],
   "__version": 1
 }

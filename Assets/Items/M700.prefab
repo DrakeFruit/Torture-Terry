@@ -8,7 +8,6 @@
       {
         "__type": "TortureTerry.Gun",
         "__guid": "0f7990f1-8a89-4fab-abfc-99cb38ccb44c",
-        "Automatic": false,
         "Barrel": {
           "_type": "gameobject",
           "go": "8b67e76d-11d7-42cd-b1dc-db6e690c75fa"
@@ -21,7 +20,7 @@
         "ManualChambering": true,
         "MuzzleFlash": {
           "_type": "gameobject",
-          "prefab": "prefabs/muzzle flash.prefab"
+          "prefab": "prefabs/weapon_effects/rifle_muzzleflash.prefab"
         },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -46,7 +45,7 @@
           {
             "__type": "Sandbox.ModelRenderer",
             "__guid": "b292ee87-af12-4f0f-a832-6a46262942d2",
-            "BodyGroups": 171,
+            "BodyGroups": 163,
             "CreateAttachments": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
@@ -107,6 +106,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
+    "facepunch.rifle_muzzleflash#76090",
     "facepunch.w_m700#71263"
   ],
   "__version": 1

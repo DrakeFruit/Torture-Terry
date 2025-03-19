@@ -33,6 +33,7 @@
                   "EdgeSize": "0,0"
                 },
                 "Sharpen": 0,
+                "InvertColor": false,
                 "Blur": 0,
                 "Brightness": 1,
                 "Contrast": 1,

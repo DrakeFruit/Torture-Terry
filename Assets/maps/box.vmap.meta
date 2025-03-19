@@ -2,7 +2,7 @@
   "publish": {
     "Enabled": false,
     "ProjectConfig": {
-      "Title": "box",
+      "Title": "Box",
       "Type": "map",
       "Org": "local",
       "Ident": "box",
@@ -11,9 +11,12 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
+        "facepunch.cardboard_trim_01#60802",
+        "facepunch.cardboard_trim_02#43464",
+        "mbk.benz_280sl#32332",
         "pilgrim.cardboard_hs#16021"
       ],
-      "IsWhitelistDisabled": false,
+      "IsStandaloneOnly": false,
       "Metadata": {
         "SingleAssetSource": "maps/box.vmap",
         "ParentPackage": "drakefruit.torture_terry"

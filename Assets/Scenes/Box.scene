@@ -193,19 +193,18 @@
       "Enabled": true,
       "Children": [
         {
-          "__guid": "52dd3f0d-bf38-4398-a3ad-0f29eecc5ee6",
+          "__guid": "a33bec8b-8710-4a9f-ae42-b277ed118be9",
           "Flags": 0,
           "Name": "Map",
-          "Position": "496.0883,123.4205,229.9481",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.MapInstance",
-              "__guid": "e9701be1-a94d-46b0-8b33-5c8496a5e894",
+              "__guid": "374290af-37a1-438e-bbd0-c6e9d8e83dab",
               "__version": 1,
               "EnableCollision": true,
               "MapName": "maps/box.vmap",
-              "NoOrigin": true,
+              "NoOrigin": false,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -224,7 +223,7 @@
           "Flags": 0,
           "Name": "Sun",
           "Position": "608.2184,-12.84539,238.6171",
-          "Rotation": "-0,1,-0,-0.00000004371139",
+          "Rotation": "0,0.9978942,0,0.06486257",
           "Tags": "light_directional,light",
           "Enabled": true,
           "Components": [
@@ -543,8 +542,8 @@
               "__type": "Sandbox.EnvmapProbe",
               "__guid": "37626ede-b4db-4552-9805-69e449fb9395",
               "Bounds": {
-                "Mins": "-324.1317,-779.002,-650.4211",
-                "Maxs": "664.8368,743.3853,512.0526"
+                "Mins": "-31.66842,-192.6451,-163.8311",
+                "Maxs": "32.41381,192.7163,141.2374"
               },
               "DelayBetweenUpdates": 0.1,
               "Feathering": 0.02,

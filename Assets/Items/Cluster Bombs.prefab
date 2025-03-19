@@ -364,7 +364,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.explosionmedium#78691",
+    "facepunch.explosionmedium#88481",
     "titanovsky.pipe_bomb#54061"
   ],
   "__version": 1

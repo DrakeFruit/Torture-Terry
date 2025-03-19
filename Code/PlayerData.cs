@@ -16,6 +16,12 @@ public class PlayerData
 	
 	public void Save()
 	{
+		if ( Unlocks == null )
+		{
+			Log.Error( "Couldn't save data, please report to @DrakeFruit on Discord" );
+			return;
+		}
+		
 		Stats.SetValue( "score", Score );
 		if( TortureTerry.Inventory.ItemsAccessor == null ) return;
 		foreach ( var i in TortureTerry.Inventory.ItemsAccessor.Where( i => i.IsValid() ) )

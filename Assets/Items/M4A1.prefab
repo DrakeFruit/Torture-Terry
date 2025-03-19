@@ -20,7 +20,7 @@
         "ManualChambering": false,
         "MuzzleFlash": {
           "_type": "gameobject",
-          "prefab": "prefabs/muzzle flash.prefab"
+          "prefab": "prefabs/weapon_effects/rifle_muzzleflash.prefab"
         },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -106,6 +106,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
+    "facepunch.rifle_muzzleflash#76090",
     "facepunch.w_m4a1#60166"
   ],
   "__version": 1

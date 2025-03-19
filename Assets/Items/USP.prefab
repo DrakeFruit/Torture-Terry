@@ -8,7 +8,6 @@
       {
         "__type": "TortureTerry.USP",
         "__guid": "7abccf9a-5d89-4396-86c3-3fff22edbaf0",
-        "Automatic": true,
         "Barrel": {
           "_type": "gameobject",
           "go": "2c764e95-2127-49b8-86fd-883f2678745e"
@@ -21,7 +20,7 @@
         "ManualChambering": false,
         "MuzzleFlash": {
           "_type": "gameobject",
-          "prefab": "prefabs/muzzle flash.prefab"
+          "prefab": "prefabs/weapon_effects/pistol_muzzleflash.prefab"
         },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -107,6 +106,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
+    "facepunch.pistol_muzzleflash#76089",
     "facepunch.w_usp#77979"
   ],
   "__version": 1
