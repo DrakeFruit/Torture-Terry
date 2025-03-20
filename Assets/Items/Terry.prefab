@@ -936,6 +936,8 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "facepunch.testbed#87075"
+  ],
   "__version": 1
 }

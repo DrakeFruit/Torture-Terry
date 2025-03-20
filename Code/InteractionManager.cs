@@ -32,10 +32,10 @@ public sealed class InteractionManager : Component
 		{
 			if ( Mouse.Delta.Length > 0 )
 			{
-				var newRotation = Rotation.FromRoll( MathX.RadianToDegree( MathF.Atan2( -Mouse.Delta.x, -Mouse.Delta.y ) ) + 90f );
-				item.WorldRotation = Rotation.Slerp( item.WorldRotation, newRotation, 0.02f );
-				//item.WorldRotation *= Rotation.FromPitch( item.WorldRotation.Angles().roll > 90 ? 180f : 0 );
-				// TODO: Figure out how the fuck to turn the item around
+				var newRot = Rotation.FromRoll( MathX.RadianToDegree( MathF.Atan2( -Mouse.Delta.x, -Mouse.Delta.y ) ) + 90f );
+				var rot = Rotation.Slerp( item.WorldRotation, newRot, 0.02f );
+				//rot = rot.Angles().WithPitch( item.WorldRotation.Roll() < 90 && item.WorldRotation.Roll() > -90 ? 180 : 0 );
+				item.WorldRotation = rot;
 			}
 		}
 	}
@@ -73,8 +73,8 @@ public sealed class InteractionManager : Component
 		float maxForce;
 		if ( HeldRagdoll.IsValid() )
 		{
-			maxForce = 100.0f * HeldRagdoll.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
-		} else maxForce = 100.0f * tr.Body.Mass * Scene.PhysicsWorld.Gravity.Length;
+			maxForce = 50 * HeldRagdoll.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
+		} else maxForce = 50 * tr.Body.Mass * Scene.PhysicsWorld.Gravity.Length;
 		
 		GrabJoint.SpringLinear = new PhysicsSpring( 15, 1, maxForce );
 		GrabJoint.SpringAngular = new PhysicsSpring( 15, 1, 0 );
@@ -97,7 +97,7 @@ public sealed class InteractionManager : Component
 		HeldObject = null;
 	}
 	
-	private void Clear()
+	void Clear()
 	{
 		GrabJoint?.Remove();
 		GrabJoint = null;

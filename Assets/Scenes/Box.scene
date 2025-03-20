@@ -166,7 +166,52 @@
             "items/m4a1.item",
             "items/inconvenient rock.item"
           ],
-          "MenuIcon": "textures/generated/text/62e519703d0e5ccd.vtex",
+          "MenuIcon": {
+            "$compiler": "texture",
+            "$source": "text",
+            "data": {
+              "Size": "128,128",
+              "Margin": {
+                "Size": "0,0",
+                "EdgeSize": "0,0"
+              },
+              "TextFlags": "CenterHorizontally, CenterVertically, DontClip",
+              "TextScope": {
+                "Text": "\uD83D\uDCE6",
+                "TextColor": "1,1,1,1",
+                "FontName": "Roboto",
+                "FontSize": 64,
+                "FontWeight": 400,
+                "FontItalic": false,
+                "LineHeight": 1,
+                "LetterSpacing": 0,
+                "WordSpacing": 0,
+                "Outline": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,1,1"
+                },
+                "Shadow": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                },
+                "OutlineUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,1,0,1"
+                },
+                "ShadowUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                }
+              }
+            },
+            "compiled": "textures/generated/text/62e519703d0e5ccd.vtex"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -223,7 +268,7 @@
           "Flags": 0,
           "Name": "Sun",
           "Position": "608.2184,-12.84539,238.6171",
-          "Rotation": "0,0.9978942,0,0.06486257",
+          "Rotation": "-0.00000004371139,1,-0.00000004371139,0.000000000000001910685",
           "Tags": "light_directional,light",
           "Enabled": true,
           "Components": [

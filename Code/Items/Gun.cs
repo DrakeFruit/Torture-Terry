@@ -53,7 +53,6 @@ public class Gun : Component
 		}
 		
 		Ammo--;
-		Log.Info(Ammo  );
 		
 		var tr = Scene.Trace
 			.Ray( Barrel.WorldPosition, Barrel.WorldPosition + Barrel.WorldRotation.Left * 1000f )

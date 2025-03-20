@@ -22,7 +22,7 @@
         "Outline": {
           "Enabled": false,
           "Size": 4,
-          "Color": "0,0,1,1"
+          "Color": "0.82326,0.24123,0.24123,1"
         },
         "Shadow": {
           "Enabled": false,
@@ -43,7 +43,7 @@
         }
       }
     },
-    "compiled": "textures/generated/text/1cceecd4ce8c485a.vtex"
+    "compiled": null
   },
   "Prefab": {
     "_type": "gameobject",
