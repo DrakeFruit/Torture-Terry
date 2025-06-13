@@ -226,7 +226,6 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.explosionmedium#88481",
     "polyrats.untitled_15#14146"
   ],
   "__version": 1

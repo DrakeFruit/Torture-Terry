@@ -39,7 +39,7 @@ public sealed class Bomb : Component
 					DamageInfo damage = new( Damage, GameObject, GameObject );
 					var terry = mp.GetComponent<Terry>();
 					damage.Position = terry.WorldPosition;
-					damage.IsExplosion = true;
+					damage.Tags.Add( "Explosion" );
 					terry.OnDamage( damage );
 					foreach ( var x in mp.PhysicsGroup.Bodies )
 					{ 

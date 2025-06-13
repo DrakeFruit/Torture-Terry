@@ -6,22 +6,22 @@ using Sandbox.Services;
 namespace TortureTerry;
 public class Terry : Component, Component.ICollisionListener, Component.IDamageable
 {
-	[RequireComponent] private ModelPhysics Physics { get; set; }
+	[RequireComponent] Ragdoll Ragdoll { get; set; }
 	[Property] public static GameObject BloodPrefab { get; set; }
-	private TimeSince TimeSinceLastDamage { get; set; }
+	TimeSince TimeSinceLastDamage { get; set; }
 	protected override void OnStart()
 	{
-		ModelPhysics physics = this.Components.Get<ModelPhysics>();
 		GameManager.Terries.Add( this );
 	}
 
 	public void OnCollisionStart( Collision collision )
 	{
-		if ( collision.Other.Body.PhysicsGroup == Physics.PhysicsGroup ) return;
+		Log.Info("ow");
+		if ( collision.Other.Body.PhysicsGroup == Ragdoll.PhysicsGroup ) return;
 		
 		float minImpactSpeed = 1000;
 		float speed = collision.Contact.Speed.Length;
-		float impactDamage = Physics.PhysicsGroup.Mass / 10;
+		float impactDamage = Ragdoll.PhysicsGroup.Mass / 10;
 		if ( impactDamage <= 0.0f ) impactDamage = 10;
 
 		if ( speed >= minImpactSpeed && TimeSinceLastDamage >= 0.1f )
@@ -40,7 +40,7 @@ public class Terry : Component, Component.ICollisionListener, Component.IDamagea
 
 	public static GameObject Bleed( Vector3 position )
 	{
-		var blood = Terry.BloodPrefab.Clone( position.WithX( -25 ) );
+		var blood = BloodPrefab.Clone( position.WithX( -25 ) );
 		var r = new Random();
 		blood.LocalRotation = blood.LocalRotation.Angles().WithRoll( r.Int( 0, 360 ) );
 
@@ -57,7 +57,7 @@ public class Terry : Component, Component.ICollisionListener, Component.IDamagea
 		if ( damage.Damage < 1 ) damage.Damage = 1;
 			
 		Stats.Increment( "score", damage.Damage );
-		GameManager.Player.Score += damage.Damage.CeilToInt() / ( damage.IsExplosion ? GameManager.Terries.Count : 1 );
+		GameManager.Player.Score += damage.Damage.CeilToInt() / ( damage.Tags.Has( "Explosion" ) ? GameManager.Terries.Count : 1 );
 			
 		GameManager.Destroy( Bleed( damage.Position ), 5 );
 			

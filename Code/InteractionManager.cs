@@ -6,15 +6,17 @@ using Sandbox.Physics;
 namespace TortureTerry;
 public sealed class InteractionManager : Component
 {
-	[Property] Inventory Inventory { get; set; }
-    [Property] Vector3 Gravity { get; set; }
+	[Property] public Inventory Inventory { get; set; }
+    [Property] public Vector3 Gravity { get; set; }
     public static SceneTraceResult Tr { get; set; }
-    private PhysicsBody HeldBody;
-    private GameObject HeldObject;
-    private ModelPhysics HeldRagdoll;
-    private PhysicsBody CursorBody;
-    private Sandbox.Physics.FixedJoint GrabJoint;
-    private float HeldAngularDamping;
+    
+    PhysicsBody HeldBody;
+    GameObject HeldObject;
+    ModelPhysics HeldMP;
+    Ragdoll HeldRagdoll;
+    PhysicsBody CursorBody;
+    Sandbox.Physics.FixedJoint GrabJoint;
+    float HeldAngularDamping;
     
 	protected override void OnEnabled()
 	{
@@ -61,7 +63,8 @@ public sealed class InteractionManager : Component
 
 		HeldBody = tr.Body;
 		HeldObject = tr.GameObject;
-		HeldRagdoll = HeldObject.Components.GetInChildrenOrSelf<ModelPhysics>();
+		HeldMP = HeldObject.Components.GetInChildrenOrSelf<ModelPhysics>();
+		HeldRagdoll = HeldObject.Components.GetInChildrenOrSelf<Ragdoll>();
 
 		var localOffset = HeldBody.Transform.PointToLocal( tr.HitPosition );
 		
@@ -71,10 +74,9 @@ public sealed class InteractionManager : Component
 		GrabJoint.Point2 = new PhysicsPoint( HeldBody, localOffset );
 
 		float maxForce;
-		if ( HeldRagdoll.IsValid() )
-		{
-			maxForce = 50 * HeldRagdoll.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
-		} else maxForce = 50 * tr.Body.Mass * Scene.PhysicsWorld.Gravity.Length;
+		if ( HeldMP.IsValid() ) maxForce = 50 * HeldMP.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
+		else if ( HeldRagdoll.IsValid() ) maxForce = 50 * HeldMP.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
+		else maxForce = 50 * tr.Body.Mass * Scene.PhysicsWorld.Gravity.Length;
 		
 		GrabJoint.SpringLinear = new PhysicsSpring( 15, 1, maxForce );
 		GrabJoint.SpringAngular = new PhysicsSpring( 15, 1, 0 );
