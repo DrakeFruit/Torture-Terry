@@ -13,7 +13,6 @@ public sealed class InteractionManager : Component
     PhysicsBody HeldBody;
     GameObject HeldObject;
     ModelPhysics HeldMP;
-    Ragdoll HeldRagdoll;
     PhysicsBody CursorBody;
     Sandbox.Physics.FixedJoint GrabJoint;
     float HeldAngularDamping;
@@ -64,7 +63,6 @@ public sealed class InteractionManager : Component
 		HeldBody = tr.Body;
 		HeldObject = tr.GameObject;
 		HeldMP = HeldObject.Components.GetInChildrenOrSelf<ModelPhysics>();
-		HeldRagdoll = HeldObject.Components.GetInChildrenOrSelf<Ragdoll>();
 
 		var localOffset = HeldBody.Transform.PointToLocal( tr.HitPosition );
 		
@@ -74,8 +72,7 @@ public sealed class InteractionManager : Component
 		GrabJoint.Point2 = new PhysicsPoint( HeldBody, localOffset );
 
 		float maxForce;
-		if ( HeldMP.IsValid() ) maxForce = 50 * HeldMP.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
-		else if ( HeldRagdoll.IsValid() ) maxForce = 50 * HeldMP.PhysicsGroup.Mass * Scene.PhysicsWorld.Gravity.Length;
+		if ( HeldMP.IsValid() ) maxForce = 50 * HeldMP.Mass * Scene.PhysicsWorld.Gravity.Length;
 		else maxForce = 50 * tr.Body.Mass * Scene.PhysicsWorld.Gravity.Length;
 		
 		GrabJoint.SpringLinear = new PhysicsSpring( 15, 1, maxForce );
@@ -88,7 +85,7 @@ public sealed class InteractionManager : Component
 	{
 		if(tr.GameObject.Tags.Has("trash"))
 		{
-			GrabJoint?.Body2.GetGameObject().Destroy();
+			GrabJoint?.Body2.GameObject?.Destroy();
 		}
 		
 		HeldBody.AngularDamping = HeldAngularDamping; //Reset angular damping

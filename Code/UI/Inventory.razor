@@ -37,6 +37,7 @@
 	private bool MenuOpen { get; set; } = false;
 	protected override void OnStart()
 	{
+		Items = Items.Where( i => i.ShowInShop ).ToList();
 		ItemsAccessor = Items;
 	}
 	

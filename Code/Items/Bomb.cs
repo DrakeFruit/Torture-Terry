@@ -41,9 +41,9 @@ public sealed class Bomb : Component
 					damage.Position = terry.WorldPosition;
 					damage.Tags.Add( "Explosion" );
 					terry.OnDamage( damage );
-					foreach ( var x in mp.PhysicsGroup.Bodies )
+					foreach ( var x in mp.Bodies )
 					{ 
-						x.ApplyImpulse( impulse );
+						x.Component.ApplyImpulse( impulse );
 					}
 				}
 			}

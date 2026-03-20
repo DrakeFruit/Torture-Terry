@@ -1,39 +1,14 @@
 {
-  "ItemIcon": {
-    "$compiler": "texture",
-    "$source": "imagefile",
-    "data": {
-      "FilePath": "materials/decals/terry2.png",
-      "MaxSize": 4096,
-      "ConvertHeightToNormals": false,
-      "NormalScale": 1,
-      "Rotate": 0,
-      "FlipVertical": false,
-      "FlipHorizontal": false,
-      "Padding": {
-        "Size": "0,0",
-        "EdgeSize": "0,0"
-      },
-      "Sharpen": 0,
-      "Blur": 0,
-      "Brightness": 1,
-      "Contrast": 1,
-      "Saturation": 1,
-      "Hue": 0,
-      "Colorize": false,
-      "TargetColor": "0,1,0,1",
-      "CacheToDisk": true
-    },
-    "compiled": "textures/generated/imagefile/c0e4f8859cecb323.vtex"
-  },
+  "ItemIcon": null,
   "Prefab": {
     "_type": "gameobject",
     "prefab": "items/terry.prefab"
   },
   "Locked": false,
+  "ShowInShop": false,
   "Held": false,
   "Name": "terry",
-  "Price": 2500,
+  "Price": -1,
   "__references": [],
   "__version": 0
 }
